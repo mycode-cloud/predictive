@@ -1,9 +1,4 @@
 check50:
-
-  files:
-    - !exclude "*"
-    - !include "hello.py"
-    
   checks:
     hello world:
       - run: python3 hello.py
