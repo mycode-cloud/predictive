@@ -1,6 +1,5 @@
 check50:
   checks: foo.py
-
 dependencies:
   - "jupyter>=1.0"
   - "pandas>=1.0"
