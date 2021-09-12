@@ -8,4 +8,3 @@ check50:
         stdout: Hello, world!
         exit: 0
 submit50:
-  files:  *check50_files
