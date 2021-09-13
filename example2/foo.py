@@ -10,10 +10,10 @@ def prints_hello2():
     """Does the program print "Hello, world2\\n"? """
     from re import match
  
-    expected = "[Hh]ello, world2\n"
+    expected = "Hello, world2\n"
     actual = check50.run("python3 hello2.py").stdout()
     if not match(expected, actual):
         help = None
         if match(expected[:-1], actual):
             help = r"did you forget a newline ('\n') at the end of your printf string?"
-        raise check50.Mismatch("hello, world2\n", actual, help=help)
+        raise check50.Mismatch("Hello, world2\n", actual, help=help)
