@@ -1,5 +1,10 @@
+submit50:
+  files: &submit50_files
+    - !exclude "*"
+    - !require hello.py
 check50:
   checks: foo.py
+  files: *submit50_files
 dependencies:
   - "jupyter>=1.0"
   - "pandas>=1.0"
