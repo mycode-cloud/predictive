@@ -14,6 +14,6 @@ def prints_hello2():
     actual = check50.run("python3 hello2.py").stdout()
     if not match(expected, actual):
         help = None
-        if match(expected[:-2], actual):
+        if match(expected[:-1], actual):
             help = r"did you forget a newline ('\n') at the end of your printf string?"
         raise check50.Mismatch("hello, world2\n", actual, help=help)
