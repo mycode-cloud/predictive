@@ -10,7 +10,7 @@ def prints_hello2():
     """Does the program print "Hello, world2"? """
     import re
  
-    expected = "Hello, world2"
+    expected = "Hello, world2\n"
     actual = check50.run("python3 hello2.py").stdout()
     if not re.match(expected, actual):
         help = None
