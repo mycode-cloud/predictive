@@ -2,12 +2,12 @@ import check50 # import the check50 module
 
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
-    """file exists""" # this is what you will see when running check50
+    """File exists""" # this is what you will see when running check50
     check50.exists("hello2.py") # the actual check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def prints_hello2():
-    """Does the program print "Hello, world2"? """
+    """The program print "Hello, world2"? """
     import re
  
     expected = "Hello, world2"
