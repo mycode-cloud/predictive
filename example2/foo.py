@@ -7,7 +7,7 @@ def exists(): # the name of the check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def prints_hello2():
-    """The program print "Hello, world2"? """
+    """The program print "Hello, world2" """
     import re
  
     expected = "Hello, world2"
