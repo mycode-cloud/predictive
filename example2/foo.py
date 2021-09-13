@@ -8,7 +8,7 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def prints_hello2():
     """Does the program print "Hello, world2\\n"? """
-    from re import match
+    import re
  
     expected = "Hello, world2\n"
     actual = check50.run("python3 hello2.py").stdout()
