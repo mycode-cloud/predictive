@@ -12,10 +12,10 @@ def prints_hello2():
  
     expected = "Hello, world2\n"
     actual = check50.run("python3 hello2.py").stdout()
-    if not re.match(expected, actual,re.DOTALL):
+    if not re.match(expected, actual,re.M):
         help = None
         if re.match(expected[:-1], actual):
             help = r"did you forget a newline ('\n') at the end of your printf string?"
         raise check50.Mismatch("Hello, world2\n", actual, help=help)
-    if re.match(expected,actual,re.DOTALL):
+    if re.match(expected,actual,re.M):
         print(True)
