@@ -18,18 +18,15 @@ def check_cases(exists):
     """Program prints correct sum """
     check50.include("Question2_Sol.py")
     check50.py.append_code("Question2.py", "Question2_Sol.py")
-#    check50.run("python3 Question2.py").stdout("55").exit()
-#    check50.run("python3 Question2.py").stdout("66").exit()
-#    check50.run("python3 Question2.py").stdout("78").exit()
     
     actual = check50.run("python3 Question2.py").stdout()
     
     if "55" not in actual:
-        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10]"
+        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10].  Your code is being checked against several different arrays."
         raise check50.Missing("55", actual, help=help)
     if "66" not in actual:
-        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11]"
+        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11].  Your code is being checked against several different arrays."
         raise check50.Missing("66", actual, help=help)
     if "78" not in actual:
-        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11,12]"
+        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11,12].  Your code is being checked against several different arrays."
         raise check50.Missing("78", actual, help=help)
