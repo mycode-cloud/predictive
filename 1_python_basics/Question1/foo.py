@@ -6,6 +6,6 @@ def exists(): # the name of the check
     check50.exists("Question1.py") # the actual check
 
 @check50.check(exists) # only run this check if the exists check has passed
-def prints_hello():
-    """Program prints "Hello, world!" """
-    check50.run("python3 Question1.py").stdout("Hello, world!", regex=True).exit(0)
+def check_cases(exists):
+    """Program prints correct name length """
+    check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXX").stdout("10").exit()
