@@ -9,7 +9,7 @@ def exists(): # the name of the check
 def check_cases(exists):
     """Program prints correct sum """
     check50.include("Question2_Sol.txt")
-    check50.py.append_code("Question2.py", "Question2_Sol.py")
+    check50.py.append_code("Question2.py", "Question2_Sol.txt")
     check50.run("python3 Question2.py").stdout("55").exit()
     check50.run("python3 Question2.py").stdout("66").exit()
     check50.run("python3 Question2.py").stdout("78").exit()
