@@ -24,9 +24,9 @@ def check_cases(exists):
     
     actual = check50.run("python3 Question2.py").stdout()
  
-    if not re.search(search_n(66), actual):
+    if "66" not in actual:
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11]"
-        raise check50.Mismatch("66", actual, help=help)
-    if not re.search(search_n(78), actual):
+        raise check50.Missing("66", actual, help=help)
+    if "78" not in actual:
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11,12]"
-        raise check50.Mismatch("78", actual, help=help)
+        raise check50.Missing("78", actual, help=help)
