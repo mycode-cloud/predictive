@@ -26,9 +26,10 @@ def check_cases(exists):
     
     if "55" not in actual:
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10]"
+        raise check50.Missing("55", actual, help=help)
     if "66" not in actual:
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11]"
-#        raise check50.Missing("66", actual, help=help)
+        raise check50.Missing("66", actual, help=help)
     if "78" not in actual:
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11,12]"
-#        raise check50.Missing("78", actual, help=help)
+        raise check50.Missing("78", actual, help=help)
