@@ -21,8 +21,8 @@ def check_cases(exists):
         help = r"Your code does not work with the list ['Johannes', 'Jamal', 'Jamal', 'Johannes', 'Galina']."
         raise check50.Missing("Johannes Jamal Galina", actual, help=help)
     if "a b c" not in actual:
-        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11].  Your code is being checked against several different arrays."
-        raise check50.Missing("66", actual, help=help)
-    if "78" not in actual:
-        help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11,12].  Your code is being checked against several different arrays."
+        help = r"Your code does not work with the list ['a', 'a', 'a', 'b', 'b', 'c'].  Your code is being checked against several different lists."
+        raise check50.Missing("a b c", actual, help=help)
+    if "d e f g" not in actual:
+        help = r"Your code does not work with the ['d', 'd', 'd', 'd', 'e', 'e', 'e', 'f', 'f', 'g', 'g'].  Your code is being checked against several different lists."
         raise check50.Missing("78", actual, help=help)
