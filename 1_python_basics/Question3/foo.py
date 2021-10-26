@@ -9,7 +9,7 @@ def exists(): # the name of the check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases(exists):
-    """Program prints correct sum """
+    """Program prints correct list """
     check50.include("Question3_Sol.py")
     check50.py.append_code("Question3.py", "Question3_Sol.py")
     
