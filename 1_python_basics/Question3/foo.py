@@ -13,7 +13,7 @@ def check_cases(exists):
     check50.include("Question3_Sol.py")
     check50.py.append_code("Question3.py", "Question3_Sol.py")
     
-    check50.run("python3 Question3.py").stdout("Johannes Jamal Galina").exit()
+#    check50.run("python3 Question3.py").stdout("Johannes Jamal Galina").exit()
     
     actual = check50.run("python3 Question3.py").stdout()
     
