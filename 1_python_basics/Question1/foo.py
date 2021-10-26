@@ -9,3 +9,5 @@ def exists(): # the name of the check
 def check_cases(exists):
     """Program prints correct name length """
     check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXX").stdout("10").exit()
+    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXX").stdout("15").exit()
+    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXXXXXXX").stdout("20").exit()
