@@ -25,4 +25,4 @@ def check_cases(exists):
         raise check50.Missing("a b c", actual, help=help)
     if "d e f g" not in actual:
         help = r"Your code does not work with the ['d', 'd', 'd', 'd', 'e', 'e', 'e', 'f', 'f', 'g', 'g'].  Your code is being checked against several different lists."
-        raise check50.Missing("78", actual, help=help)
+        raise check50.Missing("d e f g", actual, help=help)
