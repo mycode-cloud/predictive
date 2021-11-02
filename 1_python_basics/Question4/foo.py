@@ -21,6 +21,9 @@ def check_cases(exists):
     if "5" not in actual:
         help = r"Your code does not work for 'John'.  Your code is being checked against several different cases."
         raise check50.Missing("a b c", actual, help=help)
-    if "d e f g" not in actual:
+    if "55" not in actual:
+        help = r"Your code does not work for other dictionaries.  Your code is being checked against several different dictionaries."
+        raise check50.Missing("d e f g", actual, help=help)
+    if "35" not in actual:
         help = r"Your code does not work for other dictionaries.  Your code is being checked against several different dictionaries."
         raise check50.Missing("d e f g", actual, help=help)
