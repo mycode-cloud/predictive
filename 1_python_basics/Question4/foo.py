@@ -16,7 +16,7 @@ def check_cases(exists):
     actual = check50.run("python3 Question4.py").stdout()
     
     if "25" not in actual:
-        help = r"Your code does not print the correct result for 'Johanne'."
+        help = r"Your code does not print the correct result for 'Johannes'."
         raise check50.Missing("25", actual, help=help)
     if "5" not in actual:
         help = r"Your code does not work for 'John'.  Your code is being checked against several different cases."
