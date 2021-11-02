@@ -2,7 +2,6 @@ submit50:
   files: &submit50_files
     - !exclude "*"
     - !require Question2.py
-check50:
-  checks: foo.py
+check50: true
   files: *submit50_files
 
