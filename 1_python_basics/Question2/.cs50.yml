@@ -3,6 +3,6 @@ submit50:
     - !exclude "*"
     - !require Question2.py
 check50: 
-  checks:  foo.py
+  checks: foo.py
   files: *submit50_files
 
