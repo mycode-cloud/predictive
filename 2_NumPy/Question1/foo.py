@@ -12,7 +12,7 @@ def check_cases11(exists):
     """Program prints correct output for reshaped array 'a'"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected11 = r"[\[1,2\]"
+    expected11 = r"\[[1,2\]"
     expected12 = r"\[3,4\]]"
     
     if not re.search(expected11, actual) or not re.search(expected12, actual):
