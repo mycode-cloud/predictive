@@ -73,7 +73,7 @@ def check_cases22(exists):
         
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases31(exists):
-    """Program prints correct output for reshaped sample array"""
+    """Program prints correct output for reshaped sample arrays"""
     check50.include("Question1_Sol.py")
     check50.py.append_code("Question1.py", "Question1_Sol.py")
     
