@@ -21,7 +21,7 @@ def check_cases(exists):
     expected5 = r'\[\[2,3\]\n \[4,5\]\]'
     expected6 = r'\[\[7,7\]\n \[7,7\]\]'
     
-    if not re.search(expected1, actual):
+    if not re.search('\[\[1,2\]\n \[3,4\]\]', actual):
         help = r"Your code does not print the correct result for 'a'."
         raise check50.Mismatch("[[1,2]\n [3,4]]", actual, help=help)
     if not re.search(expected2, actual):
