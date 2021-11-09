@@ -14,7 +14,7 @@ def check_cases(exists):
     check50.py.append_code("Question1.py", "Question1_Sol.py")
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected1 = r'\[\[1,2\].\[3,4\]\]'
+    expected1 = r'\[\[1,2\]\n \[3,4\]\]'
     expected2 = r'\[\[5,5\]\n \[5,5\]\]'
     expected3 = r'\[\[9,8\]\n \[7,6\]\]'
     expected4 = r'\[\[15,15\]\n \[15,15\]\]'
