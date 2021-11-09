@@ -12,8 +12,8 @@ def check_cases11(exists):
     """Program prints correct output for reshaped array 'a'"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected1_1 = r'\[1,2\]'
-    expected1_2 = r'\[3,4\]'
+    expected1_1 = r'[1,2]'
+    expected1_2 = r'[3,4]'
     
     if not (re.search(expected1_1, actual) and re.search(expected1_2, actual)):
         help = r"Your code does not print the correct result for the reshaped array 'a'."
