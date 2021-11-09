@@ -21,6 +21,6 @@ def check_cases(exists):
     expected5 = r'\[\[2,3\]\n \[4,5\]\]'
     expected6 = r'\[\[7,7\]\n \[7,7\]\]'
     
-    if not re.search(expected1, actual, re.DOTALL):
+    if not re.search(expected1, actual):
         help = r"Your code does not print the correct result for the reshaped array 'a'."
         raise check50.Missing('Reshaped array','Given output',help=help)
