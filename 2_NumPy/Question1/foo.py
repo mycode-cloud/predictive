@@ -22,8 +22,8 @@ def check_cases(exists):
     expected6 = r'\[\[7,7\]\n \[7,7\]\]'
     
     if not re.search('\[\[1,2\]\n \[3,4\]\]', actual):
-        help = r"Your code does not print the correct result for 'a'."
-        raise check50.Mismatch(help=help)
+        help = r"Your code does not print the correct result for the reshaped array 'a'."
+        raise check50.Mismatch("","",help=help)
     if not re.search(expected2, actual):
         help = r"Your code does not print the correct sum 'b+c'."
         raise check50.Mismatch(expected2, actual, help=help)
