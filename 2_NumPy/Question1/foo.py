@@ -13,7 +13,7 @@ def check_cases(exists):
     check50.include("Question1_Sol.py")
     check50.py.append_code("Question1.py", "Question1_Sol.py")
     
-    actual = check50.run("python3 Question1.py").stdout()
+    actual = check50.run("python3 Question1.py").stdout(regex=True)
     expected1 = r'\[\[1,2\]\n \[3,4\]\]'
     expected2 = r'\[\[5,5\]\n \[5,5\]\]'
     expected3 = r'\[\[9,8\]\n \[7,6\]\]'
@@ -23,7 +23,7 @@ def check_cases(exists):
     
     if not re.search(expected1, actual):
         help = r"Your code does not print the correct result for 'a'."
-        raise check50.Mismatch(expected1, actual, help=help)
+        raise check50.Mismatch(r'[[1,2]\n [3,4]]', actual, help=help)
     if not re.search(expected2, actual):
         help = r"Your code does not print the correct sum 'b+c'."
         raise check50.Mismatch(expected2, actual, help=help)
