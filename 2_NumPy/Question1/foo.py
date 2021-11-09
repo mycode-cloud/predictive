@@ -15,7 +15,7 @@ def check_cases11(exists):
     expected1_1 = '[[1,2]'
     expected1_2 = '[3,4]]'
     
-    if not re.search(expected1_1, actual) or not re.search(expected1_2, actual):
+    if not (re.search(expected1_1, actual) and re.search(expected1_2, actual)):
         help = r"Your code does not print the correct result for the reshaped array 'a'."
         raise check50.Missing('Reshaped array','Given output',help=help)
       
