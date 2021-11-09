@@ -12,10 +12,9 @@ def check_cases11(exists):
     """Program prints correct output for reshaped array 'a'"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected11 = "\[\[1 2\]\n \[3 4\]\]"
-    expected12 = "\[3 4\]"
+    expected = "\[\[1 2\]\n \[3 4\]\]"
     
-    if not re.search(expected11, actual):
+    if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the reshaped array 'a'."
         raise check50.Missing("Reshaped array 'a'",'your output',help=help)
       
@@ -26,11 +25,9 @@ def check_cases12(exists):
     """Program prints correct output for sum 'b+c'"""
     
     actual = check50.run("python3 Question1.py").stdout()
+    expected = "\[\[5 5\]\n \[5 5\]\]"
     
-    expected11 = r'\\[\\[5,5\\]'
-    expected12 = r'\\[5,5\\]\]]'
-    
-    if not (re.search(expected11, actual) and re.search(expected12, actual)):
+    if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the the sum 'b+c'."
         raise check50.Missing("Sum array 'b+c'",'your output',help=help)
         
@@ -42,10 +39,9 @@ def check_cases21(exists):
     """Program prints correct output for reshaped array 'a2'"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected11 = r'\\[\\[9,8\\]'
-    expected12 = r'\\[7,6\\]\\]'
+    expected = "\[\[9 8\]\n \[7 6\]\]"
     
-    if not (re.search(expected11, actual) and re.search(expected12, actual)):
+    if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the reshaped array 'a2'."
         raise check50.Missing("Reshaped array 'a2'",'your output',help=help)
         
@@ -56,11 +52,9 @@ def check_cases22(exists):
     """Program prints correct output for sum 'b2+c'"""
     
     actual = check50.run("python3 Question1.py").stdout()
+    expected = "\[\[15 15\]\n \[15 15\]\]"
     
-    expected11 = r'\\[\\[15,15\\]'
-    expected12 = r'\\[15,15\\]\]]'
-    
-    if not (re.search(expected11, actual) and re.search(expected12, actual)):
+    if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the the sum 'b2+c'."
         raise check50.Missing("Sum array 'b2+c'",'your output',help=help)
         
@@ -80,10 +74,9 @@ def check_cases31(exists):
     check50.py.append_code("Question1.py", "Question1_Sol.py")
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected11 = '\\[\\[2,3\\]'
-    expected12 = '\\[4,5\\]\\]'
+    expected = "\[\[2 3\]\n \[4 5\]\]"
     
-    if not (re.search(expected11, actual) and re.search(expected12, actual)):
+    if not re.search(expected, actual):
         help = r"Your code does not print the correct reshaped result for other possible arrays."
         raise check50.Missing('Sample reshaped array','sample output',help=help)
         
@@ -96,11 +89,9 @@ def check_cases32(exists):
     check50.py.append_code("Question1.py", "Question1_Sol.py")
     
     actual = check50.run("python3 Question1.py").stdout()
+    expected = "\[\[7 7\]\n \[7 7\]\]"
     
-    expected11 = r'\\[\\[7,7\\]'
-    expected12 = r'\\[7,7\\]\]]'
-    
-    if not (re.search(expected11, actual) and re.search(expected12, actual)):
+    if not re.search(expected, actual):
         help = r"Your code does not print the correct result for other possible arrays."
         raise check50.Missing('Sample sum array','sample output',help=help)
 
