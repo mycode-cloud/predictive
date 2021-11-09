@@ -21,9 +21,9 @@ def check_cases(exists):
     expected5 = "[[2,3]\n [4,5]]"
     expected6 = "[[7,7]\n [7,7]]"
     
-    if not re.search(expected1, actual):
+    if expected1 not in actual:
         help = r"Your code does not print the correct result for 'a'."
-        raise check50.Mismatch(expected1, actual, help=help)
+        raise check50.Missing(expected1, actual, help=help)
     if not re.search(expected2, actual):
         help = r"Your code does not print the correct sum 'b+c'."
         raise check50.Mismatch(expected2, actual, help=help)
