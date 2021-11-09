@@ -2,37 +2,40 @@ import check50 # import the check50 module
 import check50.py
 import re
 
-def sep_num(num):
-    # regex that matches `num` not surrounded by any other numbers
-    # (so coins(2) won't match e.g. 123)
-    return fr"(?<!\d){num}(?!\d)"
-
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
-    check50.exists("Question4.py") # the actual check
+    check50.exists("Question1.py") # the actual check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases(exists):
-    """Program prints correct number of points for organizer """
-    check50.include("Question4_Sol.py")
-    check50.py.append_code("Question4.py", "Question4_Sol.py")
+    """Program prints correct output """
+    check50.include("Question1_Sol.py")
+    check50.py.append_code("Question1.py", "Question1_Sol.py")
     
-    actual = check50.run("python3 Question4.py").stdout()
-    expected1 = "25\n"
-    expected2 = "5\n"
-    expected3 = "55\n"
-    expected4 = "35\n"
+    actual = check50.run("python3 Question1.py").stdout()
+    expected1 = "[[1,2]\n\s[3,4]]"
+    expected2 = "[[5,5]\n\s[5,5]]"
+    expected3 = "[[9,8]\n\s[7,6]]"
+    expected4 = "[[15,15]\n\s[15,15]]"
+    expected5 = "[[2,3]\n\s[4,5]]"
+    expected6 = "[[7,7]\n\s[7,7]]"
     
-    if not re.search(sep_num(25), actual):
-        help = r"Your code does not print the correct result for 'Johannes'."
+    if not re.search(expected1, actual):
+        help = r"Your code does not print the correct result for 'a'."
         raise check50.Mismatch(expected1, actual, help=help)
-    if not re.search(sep_num(5), actual):
-        help = r"Your code does not work for 'John'.  Your code is being checked against several different cases."
+    if not re.search(expected2, actual):
+        help = r"Your code does not print the correct sum 'b+c'."
         raise check50.Mismatch(expected2, actual, help=help)
-    if not re.search(sep_num(55), actual):
-        help = r"Your code does not work for other dictionaries.  Your code is being checked against several different dictionaries."
+    if not re.search(expected3, actual):
+        help = r"Your code does not print the correct result for 'a2'."
         raise check50.Mismatch(expected3, actual, help=help)
-    if not re.search(sep_num(35), actual):
-        help = r"Your code does not work for other dictionaries.  Your code is being checked against several different dictionaries."
+    if not re.search(expected4, actual):
+        help = r"Your code does not print the correct sum 'b2+c'."
         raise check50.Mismatch(expected4, actual, help=help)
+    if not re.search(expected5, actual):
+        help = r"Your code does not print the correct result for other arrays."
+        raise check50.Mismatch(expected5, actual, help=help)
+    if not re.search(expected6, actual):
+        help = r"Your code does not print the correct sum for other arrays."
+        raise check50.Mismatch(expected6, actual, help=help)
