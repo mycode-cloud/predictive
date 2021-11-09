@@ -14,12 +14,12 @@ def check_cases(exists):
     check50.py.append_code("Question1.py", "Question1_Sol.py")
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected1 = r"\[\[1,2\]\n \[3,4\]\]"
-    expected2 = r"\[\[5,5\]\n \[5,5\]\]"
-    expected3 = r"\[\[9,8\]\n \[7,6\]\]"
-    expected4 = r"\[\[15,15\]\n \[15,15\]\]"
-    expected5 = r"\[\[2,3\]\n \[4,5\]\]"
-    expected6 = r"\[\[7,7\]\n \[7,7\]\]"
+    expected1 = r'\[\[1,2\]\n \[3,4\]\]'
+    expected2 = r'\[\[5,5\]\n \[5,5\]\]'
+    expected3 = r'\[\[9,8\]\n \[7,6\]\]'
+    expected4 = r'\[\[15,15\]\n \[15,15\]\]'
+    expected5 = r'\[\[2,3\]\n \[4,5\]\]'
+    expected6 = r'\[\[7,7\]\n \[7,7\]\]'
     
     if not re.search(expected1, actual):
         help = r"Your code does not print the correct result for 'a'."
