@@ -11,7 +11,7 @@ def exists(): # the name of the check
 def check_cases11(exists):
     """Program prints correct output for subarray of 'a'"""
     
-    actual = check50.run("python3 Question1.py").stdout()
+    actual = check50.run("python3 Question2.py").stdout()
     expected = "\[\[1 2\]\n \[5 6\]\]"
     
     if not re.search(expected, actual):
@@ -103,7 +103,7 @@ def check_cases16(exists):
 def check_cases21(exists):
     """Program prints correct output for subarray of 'c'"""
     
-    actual = check50.run("python3 Question1.py").stdout()
+    actual = check50.run("python3 Question2.py").stdout()
     expected = "\[\[11 21\]\n \[51 61\]\]"
     
     if not re.search(expected, actual):
