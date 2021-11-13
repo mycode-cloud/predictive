@@ -192,13 +192,52 @@ def check_cases26(exists):
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases3(exists):
     """Program prints correct outputs for other arrays"""
+    check50.include("Question2_Sol.py")
+    check50.py.append_code("Question2.py", "Question2_Sol.py")
     
     actual = check50.run("python3 Question2.py").stdout()
-    expected = "1062"
+    expected = "\[\[113 213\]\n \[513 613\]\]"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the sum of elements in subarrays for 'c' and 'd'."
-        raise check50.Missing("Element subarray sum",'your output',help=help)
+        help = r"Your code does not print the correct result for general first subarray."
+        raise check50.Missing("General first subarray",'your output',help=help)
+        
+    actual00 = check50.run("python3 Question2.py").stdout()
+    expected00 = "\[\[2272 2282\]\n \[2312 2322\]\]"
+    
+    if not re.search(expected00, actual00):
+        help = r"Your code does not print the correct result for general second subarray."
+        raise check50.Missing("General second subarray",'your output',help=help)
+
+    actual0 = check50.run("python3 Question2.py").stdout()
+    expected0 = "\[\[-2159 -2069\]\n \[-1799 -1709\]\]"
+    
+    if not re.search(expected0, actual0):
+        help = r"Your code does not print the correct result for the general difference of subarrays."
+        raise check50.Missing("General difference of subarrays",'your output',help=help)
+        
+        
+    actual2 = check50.run("python3 Question2.py").stdout()
+    expected2 = "\[\[ 256736  486066\]\n \[1186056 1423386\]\]"
+    
+    if not re.search(expected2, actual2):
+        help = r"Your code does not print the correct result for elementwise multiplication for general subarrays."
+        raise check50.Missing("General multiplication subarray",'your output',help=help)
+        
+    actua3l = check50.run("python3 Question2.py").stdout()
+    expected3 = "\[\[0.04973592 0.09333918\]\n \[0.22188581 0.26399655\]\]"
+    
+    if not re.search(expected3, actual3):
+        help = r"Your code does not print the correct result for the elementwise division of general subarrays."
+        raise check50.Missing("General division subarray",'your output',help=help)
+        
+    actual4 = check50.run("python3 Question2.py").stdout()
+    expected4 = "10640"
+    
+    if not re.search(expected4, actual4):
+        help = r"Your code does not print the correct result for the sum of elements in general subarrays."
+        raise check50.Missing("General element subarray sum",'your output',help=help)
+   
 
         
   
