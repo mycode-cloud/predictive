@@ -224,7 +224,7 @@ def check_cases3(exists):
         help = r"Your code does not print the correct result for elementwise multiplication for general subarrays."
         raise check50.Missing("General multiplication subarray",'your output',help=help)
         
-    actua3l = check50.run("python3 Question2.py").stdout()
+    actua3 = check50.run("python3 Question2.py").stdout()
     expected3 = "\[\[0.04973592 0.09333918\]\n \[0.22188581 0.26399655\]\]"
     
     if not re.search(expected3, actual3):
