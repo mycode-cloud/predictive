@@ -52,7 +52,7 @@ def check_cases14(exists):
     """Program prints correct output for elementwise multiplication of subarrays for 'a' and 'b'"""
     
     actual = check50.run("python3 Question2.py").stdout()
-    expected = "\[\[27 56\]\n \[155 192\]\]"
+    expected = "\[\[ 27 56\]\n \[155 192\]\]"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for elementwise multiplication for 'a' and 'b' subarrays."
@@ -224,7 +224,7 @@ def check_cases3(exists):
         help = r"Your code does not print the correct result for elementwise multiplication for general subarrays."
         raise check50.Missing("General multiplication subarray",'your output',help=help)
         
-    actua3 = check50.run("python3 Question2.py").stdout()
+    actual3 = check50.run("python3 Question2.py").stdout()
     expected3 = "\[\[0.04973592 0.09333918\]\n \[0.22188581 0.26399655\]\]"
     
     if not re.search(expected3, actual3):
