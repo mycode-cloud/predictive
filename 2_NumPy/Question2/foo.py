@@ -52,7 +52,7 @@ def check_cases14(exists):
     """Program prints correct output for elementwise multiplication of subarrays for 'a' and 'b'"""
     
     actual = check50.run("python3 Question2.py").stdout()
-    expected = "\[\[ 27 56\]\n \[155 192\]\]"
+    expected = "\[\[ 27  56\]\n \[155 192\]\]"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for elementwise multiplication for 'a' and 'b' subarrays."
