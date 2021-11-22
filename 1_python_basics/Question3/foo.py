@@ -31,7 +31,7 @@ def check_cases2():
     
     if "a b c" not in actual:
         help = r"Your code does not work with the list ['a', 'a', 'a', 'b', 'b', 'c'].  Your code is being checked against several different lists."
-        raise check50.Missing("Correct output", "your output, help=help)
+        raise check50.Missing("Correct output", "your output", help=help)
                               
                               
                               
@@ -47,7 +47,7 @@ def check_cases3():
     
     if "d e f g" not in actual:
         help = r"Your code does not work with a random list.  Your code is being checked against several different lists."
-        raise check50.Missing("Correct output", "your output, help=help)
+        raise check50.Missing("Correct output", "your output", help=help)
 
         
         
