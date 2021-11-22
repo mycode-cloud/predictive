@@ -8,21 +8,49 @@ def exists(): # the name of the check
     check50.exists("Question3.py") # the actual check
 
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases(exists):
-    """Program prints correct list """
+def check_cases():
+    """Program prints correct list - Test 1"""
     check50.include("Question3_Sol.py")
     check50.py.append_code("Question3.py", "Question3_Sol.py")
-    
-#    check50.run("python3 Question3.py").stdout("Johannes Jamal Galina").exit()
     
     actual = check50.run("python3 Question3.py").stdout()
     
     if "Johannes Jamal Galina" not in actual:
         help = r"Your code does not work with the list ['Johannes', 'Jamal', 'Jamal', 'Johannes', 'Galina']."
-        raise check50.Missing("Johannes Jamal Galina", actual, help=help)
+        raise check50.Missing("Correct output", "your output", help=help)                          
+                              
+                              
+                              
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases2():
+    """Program prints correct list - Test 2"""
+    check50.include("Question3_Sol.py")
+    check50.py.append_code("Question3.py", "Question3_Sol.py")
+    
+    actual = check50.run("python3 Question3.py").stdout()
+    
     if "a b c" not in actual:
         help = r"Your code does not work with the list ['a', 'a', 'a', 'b', 'b', 'c'].  Your code is being checked against several different lists."
-        raise check50.Missing("a b c", actual, help=help)
+        raise check50.Missing("Correct output", "your output, help=help)
+                              
+                              
+                              
+                              
+                              
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases3():
+    """Program prints correct list - Test 3"""
+    check50.include("Question3_Sol.py")
+    check50.py.append_code("Question3.py", "Question3_Sol.py")
+    
+    actual = check50.run("python3 Question3.py").stdout()
+    
     if "d e f g" not in actual:
-        help = r"Your code does not work with the ['d', 'd', 'd', 'd', 'e', 'e', 'e', 'f', 'f', 'g', 'g'].  Your code is being checked against several different lists."
-        raise check50.Missing("d e f g", actual, help=help)
+        help = r"Your code does not work with a random list.  Your code is being checked against several different lists."
+        raise check50.Missing("Correct output", "your output, help=help)
+
+        
+        
+        
+        
+        
