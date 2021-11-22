@@ -6,16 +6,16 @@ def exists(): # the name of the check
     check50.exists("Question1.py") # the actual check
 
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases(exists):
+def check_cases():
     """Program prints correct name length - Test 1"""
     check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXX").stdout("10").exit()
     
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases2(exists):
+def check_cases2():
     """Program prints correct name length - Test 2"""
     check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXX").stdout("15").exit()
     
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases3(exists):
+def check_cases3():
     """Program prints correct name length - Test 3"""
     check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXXXXXXX").stdout("20").exit()
