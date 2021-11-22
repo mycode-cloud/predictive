@@ -1,4 +1,6 @@
 import check50 # import the check50 module
+import re
+import check50.py
 
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
