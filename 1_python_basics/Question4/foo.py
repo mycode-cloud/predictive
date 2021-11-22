@@ -14,7 +14,7 @@ def exists(): # the name of the check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
-    """Program prints correct number of points for organizer """
+    """Program prints correct number of points for organizer - Test 1"""
     check50.include("Question4_Sol.py")
     check50.py.append_code("Question4.py", "Question4_Sol.py")
     
@@ -32,7 +32,7 @@ def check_cases():
         
 @check50.check(check_cases) # only run this check if the exists check has passed
 def check_cases2():
-    """Program prints correct number of points for organizer """
+    """Program prints correct number of points for organizer - Test 2"""
     check50.include("Question4_Sol.py")
     check50.py.append_code("Question4.py", "Question4_Sol.py")
     
@@ -49,7 +49,7 @@ def check_cases2():
         
 @check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
-    """Program prints correct number of points for organizer """
+    """Program prints correct number of points for organizer - Test 3"""
     check50.include("Question4_Sol.py")
     check50.py.append_code("Question4.py", "Question4_Sol.py")
     
@@ -67,7 +67,7 @@ def check_cases3():
         
 @check50.check(check_cases3) # only run this check if the exists check has passed
 def check_cases4():
-    """Program prints correct number of points for organizer """
+    """Program prints correct number of points for organizer - Test 4"""
     check50.include("Question4_Sol.py")
     check50.py.append_code("Question4.py", "Question4_Sol.py")
     
