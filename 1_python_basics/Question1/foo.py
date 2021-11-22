@@ -8,14 +8,14 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
     """Program prints correct name length - Test 1"""
-    check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXX").stdout("10").exit()
+    check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXX").stdout("The length of your name is:  10").exit()
     
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases2():
     """Program prints correct name length - Test 2"""
-    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXX").stdout("15").exit()
+    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXX").stdout("The length of your name is:  15").exit()
     
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases3():
     """Program prints correct name length - Test 3"""
-    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXXXXXXX").stdout("20").exit()
+    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXXXXXXX").stdout("The length of your name is:  20").exit()
