@@ -8,7 +8,12 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
     """Program prints correct name length - Test 1"""
-    check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXX").stdout("The length of your name is:  10").exit()
+    actual = check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXX").stdout()
+    expected = "10"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for a student with name length 10."
+        raise check50.Missing('Correct name length','your output',help=help)
     
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases2():
