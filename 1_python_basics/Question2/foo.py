@@ -14,7 +14,7 @@ def exists(): # the name of the check
     check50.exists("Question2.py") # the actual check
 
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases(exists):
+def check_cases():
     """Program prints correct sum - Test 1"""
     check50.include("Question2_Sol.py")
     check50.py.append_code("Question2.py", "Question2_Sol.py")
@@ -25,11 +25,9 @@ def check_cases(exists):
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10]."
         raise check50.Missing("55", 'your output', help=help)       
         
-        
-        
-        
-@check50.check(exists) # only run this check if the exists check has passed
-def check_cases2(exists):
+       
+@check50.check(check_cases) # only run this check if the exists check has passed
+def check_cases2():
     """Program prints correct sum - Test 2"""
     check50.include("Question2_Sol.py")
     check50.py.append_code("Question2.py", "Question2_Sol.py")
@@ -43,8 +41,8 @@ def check_cases2(exists):
         
         
         
-@check50.check(exists) # only run this check if the exists check has passed
-def check_cases3(exists):
+@check50.check(check_cases2) # only run this check if the exists check has passed
+def check_cases3():
     """Program prints correct sum - Test 3"""
     check50.include("Question2_Sol.py")
     check50.py.append_code("Question2.py", "Question2_Sol.py")
