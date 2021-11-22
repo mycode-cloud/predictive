@@ -29,7 +29,7 @@ def check_cases2():
     
 @check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
-    """Program prints correct name length - Test 1"""
+    """Program prints correct name length - Test 3"""
     actual = check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXXXXXXXX").stdout()
     expected = "21"
     
