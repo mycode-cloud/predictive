@@ -21,7 +21,7 @@ def check_cases():
                               
                               
                               
-@check50.check(exists) # only run this check if the exists check has passed
+@check50.check(check_cases) # only run this check if the exists check has passed
 def check_cases2():
     """Program prints correct list - Test 2"""
     check50.include("Question3_Sol.py")
@@ -37,7 +37,7 @@ def check_cases2():
                               
                               
                               
-@check50.check(exists) # only run this check if the exists check has passed
+@check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
     """Program prints correct list - Test 3"""
     check50.include("Question3_Sol.py")
