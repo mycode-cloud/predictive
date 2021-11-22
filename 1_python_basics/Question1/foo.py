@@ -20,9 +20,19 @@ def check_cases():
 @check50.check(check_cases) # only run this check if the exists check has passed
 def check_cases2():
     """Program prints correct name length - Test 2"""
-    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXX").stdout("The length of your name is:  15").exit()
+    actual = check50.run("python3 Question1.py").stdin("XXXXX").stdin("XXXXXXXXXX").stdout()
+    expected = "15"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for a student with name length 15."
+        raise check50.Missing('Correct name length','your output',help=help)
     
 @check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
-    """Program prints correct name length - Test 3"""
-    check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXXXXXXX").stdout("The length of your name is:  20").exit()
+    """Program prints correct name length - Test 1"""
+    actual = check50.run("python3 Question1.py").stdin("XXXXXXXXXX").stdin("XXXXXXXXXXX").stdout()
+    expected = "21"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for a student with a random name length."
+        raise check50.Missing('Correct name length','your output',help=help)
