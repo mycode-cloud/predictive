@@ -23,7 +23,7 @@ def check_cases():
     
     if "55" not in actual:
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10]."
-        raise check50.Missing("55", 'your output', help=help)       
+        raise check50.Missing("correct output", 'your output', help=help)       
         
        
 @check50.check(check_cases) # only run this check if the exists check has passed
@@ -36,7 +36,7 @@ def check_cases2():
     
     if "66" not in actual:
         help = r"Your code does not work with the arrays [1,2,3,4,5] and [6,7,8,9,10,11].  Your code is being checked against several different arrays."
-        raise check50.Missing("66", 'your output', help=help)
+        raise check50.Missing("correct output", 'your output', help=help)
         
         
         
