@@ -10,7 +10,7 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
     """Program prints correct weighted average - Test 1"""
-    actual = check50.run("python3 Question4.py").stdin("81").stdin("42").stdin("79").stdin("81").stdin("19").stdin("12").stdin("6").stdin("63").stdout()
+    actual = check50.run("python3 Question4.py").stdin("19").stdin("12").stdin("6").stdin("63").stdin("81").stdin("42").stdin("79").stdin("81").stdout()
     expected = "76.2"
     
     if not re.search(expected, actual):
