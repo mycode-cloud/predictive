@@ -17,7 +17,7 @@ def check_cases():
     """Program prints the correct median for 'speeds' - Test 1"""
     
     actual = check50.run("python3 Question2.py").stdout()
-    expected1 = 20.77333333333333
+    expected1 = 20.950000000000003
     
     if not re.search(sep_num(expected1), actual):
         help = r"Your code does not print the correct median for 'speeds'."
@@ -32,7 +32,7 @@ def check_cases2():
     """Program prints the correct median for 'speeds2' - Test 2"""
     
     actual = check50.run("python3 Question2.py").stdout()
-    expected2 = 18.3
+    expected2 = 23.4
     
     if not re.search(sep_num(expected2), actual):
         help = r"Your code does not print the correct median for 'speeds2'."
