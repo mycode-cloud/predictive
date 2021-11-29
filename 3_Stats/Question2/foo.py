@@ -49,7 +49,7 @@ def check_cases3():
     check50.py.append_code("Question2.py", "Question2_Sol.py")
     
     actual = check50.run("python3 Question2.py").stdout()
-    expected3 = 20.98
+    expected3 = 19.0
     
     if not re.search(sep_num(expected3), actual):
         help = r"Your code does not work for other data speeds.  Your code is being checked against several different data lists."
