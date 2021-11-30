@@ -86,29 +86,32 @@ def check_cases2():
 def check_cases3():
     """Program prints the correct percentiles and mode(s) for random data - Test 3"""
     
+    check50.include("Question5_Sol.py")
+    check50.py.append_code("Question5.py", "Question5_Sol.py")
+    
     actual = check50.run("python3 Question5.py").stdout()
-    expected1 = "136.5"
-    expected2 = "154.0"
-    expected3 = "218.0"
-    expected4 = "272.2"
-    expected5 = "[154, 200]"
+    expected1 = "15.75"
+    expected2 = "19.0"
+    expected3 = "26.1"
+    expected4 = "29.349999999999998"
+    expected5 = "[19.0]"
     
     if not re.search(expected1, actual):
-        help = r"Your code does not print the correct percentile P_25 for 'clicks2'."
+        help = r"Your code does not print the correct percentile P_25 for random data."
         raise check50.Mismatch("Correct output", "your output", help=help)
         
     if not re.search(expected2, actual):
-        help = r"Your code does not print the correct percentile P_50 for 'clicks2'."
+        help = r"Your code does not print the correct percentile P_50 for random data."
         raise check50.Mismatch("Correct output", "your output", help=help)
         
     if not re.search(expected3, actual):
-        help = r"Your code does not print the correct percentile P_75 for 'clicks2'."
+        help = r"Your code does not print the correct percentile P_75 for random data."
         raise check50.Mismatch("Correct output", "your output", help=help)
         
     if not re.search(expected4, actual):
-        help = r"Your code does not print the correct percentile P_95 for 'clicks2'."
+        help = r"Your code does not print the correct percentile P_95 for random data."
         raise check50.Mismatch("Correct output", "your output", help=help)
         
     if not re.search(expected5, actual):
-        help = r"Your code does not print the correct mode(s) for 'clicks2'."
+        help = r"Your code does not print the correct mode(s) for random data."
         raise check50.Mismatch("Correct output", "your output", help=help)
