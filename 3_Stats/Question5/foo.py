@@ -21,7 +21,7 @@ def check_cases():
     expected2 = "208.0"
     expected3 = "260.0"
     expected4 = "283.0"
-    expected5 = "[283]"
+    expected5 = "\[283\]"
     
     if not re.search(expected1, actual):
         help = r"Your code does not print the correct percentile P_25 for 'clicks'."
@@ -56,7 +56,7 @@ def check_cases2():
     expected2 = "154.0"
     expected3 = "218.0"
     expected4 = "272.2"
-    expected5 = "[154, 200]"
+    expected5 = "\[154, 200\]"
     
     if not re.search(expected1, actual):
         help = r"Your code does not print the correct percentile P_25 for 'clicks2'."
@@ -94,7 +94,7 @@ def check_cases3():
     expected2 = "19.0"
     expected3 = "26.1"
     expected4 = "29.349999999999998"
-    expected5 = "[19.0]"
+    expected5 = "\[19.0\]"
     
     if not re.search(expected1, actual):
         help = r"Your code does not print the correct percentile P_25 for random data."
