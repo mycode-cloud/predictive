@@ -8,3 +8,4 @@ print(find_points_for_organizer('Johannes', courses2, points2))
 
 print(find_points_for_organizer('John', courses2, points2))
 
+
