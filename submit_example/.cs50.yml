@@ -5,3 +5,4 @@ check50:
         stdout: Hello, world!
         exit: 0
 submit50:
+
