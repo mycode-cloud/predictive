@@ -5,3 +5,4 @@ print('The 50th percentile of the click data is: ', get_quants(clicks3)[1])
 print('The 75th percentile of the click data is: ', get_quants(clicks3)[2])
 print('The 95th percentile of the click data is: ', get_quants(clicks3)[3])
 print('The mode of the click data is: ', get_quants(clicks3)[4])
+
