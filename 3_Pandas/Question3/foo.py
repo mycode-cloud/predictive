@@ -22,3 +22,5 @@ def check_cases():
     if not re.search(sep_num(expected1), actual):
         help = r"Your code does not print the correct mean for 'speeds'."
         raise check50.Mismatch("Correct output", "your output", help=help)
+
+        
