@@ -36,3 +36,4 @@ def check_cases3():
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result random weights and grades."
         raise check50.Missing('Correct weighted average','your output',help=help)
+        
