@@ -115,3 +115,4 @@ def check_cases3():
     if not re.search(expected5, actual):
         help = r"Your code does not print the correct mode(s) for random data."
         raise check50.Mismatch("Correct output", "your output", help=help)
+        
