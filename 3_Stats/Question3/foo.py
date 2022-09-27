@@ -54,3 +54,4 @@ def check_cases3():
     if not re.search(expected3, actual):
         help = r"Your code does not work for other data speeds.  Your code is being checked against several different data lists."
         raise check50.Mismatch("Correct output", "your output", help=help)
+        
