@@ -99,6 +99,7 @@ def check_cases16(exists):
         
         
         
+        
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases21(exists):
     """Program prints correct output for subarray of 'c'"""
