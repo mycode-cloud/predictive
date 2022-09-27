@@ -36,3 +36,4 @@ def check_cases3():
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for a student with a random name length."
         raise check50.Missing('Correct name length','your output',help=help)
+        
