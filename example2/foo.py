@@ -19,3 +19,4 @@ def prints_hello2():
         raise check50.Mismatch("Hello, world2\n", actual, help=help)
     if re.match(expected,actual):
         print(True)
+        
