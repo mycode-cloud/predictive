@@ -18,7 +18,7 @@ def check_cases1(exists):
     """Program prints correct output for 'first12['gender'].value_counts()'"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected = "female    6\n male      4"
+    expected = "female    6\nmale      4"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for 'first12['gender'].value_counts()'."
