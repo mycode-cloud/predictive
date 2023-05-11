@@ -12,16 +12,15 @@ def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
     check50.exists("Question1.py") # the actual check
         
-        
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases1(exists):
-    """Program prints correct output for 'first12['gender'].value_counts()'"""
+def check_cases11(exists):
+    """Program prints correct output for reshaped array 'a'"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected = "'The group of students with the highest mean scores in math, writing, and reading had a majority of female students.'"
+    expected = "The group of students with the highest mean scores in math, writing, and reading had a majority of female students."
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for 'first12['gender'].value_counts()'."
-        raise check50.Missing("'first12['gender'].value_counts()'",'your output',help=help)
+        help = r"Your code does not print the correct result for the reshaped array 'a'."
+        raise check50.Missing("Reshaped array 'a'",'your output',help=help)
 
     
