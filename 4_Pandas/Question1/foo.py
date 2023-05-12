@@ -19,7 +19,7 @@ def check_cases1(exists):
     expected = "female    6\nmale      4"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for first describe print out."
+        help = r"Your code does not print the correct result for first valuecounts print out."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -33,7 +33,7 @@ def check_cases2(exists):
     expected = "female    9\nmale      3"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for second describe print out."
+        help = r"Your code does not print the correct result for second valuecounts print out."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
