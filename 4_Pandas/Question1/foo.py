@@ -21,7 +21,7 @@ def check_cases11(exists):
     assert os.path.exists("StudentsPerformance.csv")
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected = "female"
+    expected = "The group of students with the highest mean scores in math, writing, and reading had a majority of female students."
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result."
