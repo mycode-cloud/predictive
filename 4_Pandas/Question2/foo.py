@@ -60,7 +60,7 @@ def check_cases4(exists):
         
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases4(exists):
+def check_cases5(exists):
     """Program prints correct output 5"""
     
     actual = check50.run("python3 Question2.py").stdout()
