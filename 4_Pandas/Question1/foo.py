@@ -1,8 +1,6 @@
 import check50 # import the check50 module
 import check50.py
 import re
-import os
-import pandas as pd
 
 def sep_num(num):
     # regex that matches `num` not surrounded by any other numbers
