@@ -16,7 +16,7 @@ def exists(): # the name of the check
 def check_cases1(exists):
     """Program prints correct output 1"""
     
-    actual = check50.run("python3 Question1.py").stdout()
+    actual = check50.run("python3 Question2.py").stdout()
     expected = "7    98\n8    45\n9    98"
     
     if not re.search(expected, actual):
