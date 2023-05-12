@@ -16,6 +16,9 @@ def exists(): # the name of the check
 def check_cases11(exists):
     """Program prints correct output"""
     
+    check50.include("StudentsPerformance.csv")
+    assert os.path.exists("StudentsPerformance.csv")
+    
     actual = check50.run("python3 Question1.py").stdout()
     expected = "female"
     
