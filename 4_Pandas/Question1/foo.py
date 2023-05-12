@@ -14,13 +14,13 @@ def exists(): # the name of the check
         
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases11(exists):
-    """Program prints correct output for reshaped array 'a'"""
+    """Program prints correct output"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected = "The group of students with the highest mean scores in math, writing, and reading had a majority of female students.\n"
+    expected = "female"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for 'first12['gender'].value_counts()'."
-        raise check50.Missing("'first12['gender'].value_counts()'",'your output',help=help)
+        help = r"Your code does not print the correct result."
+        raise check50.Missing("Correct results",'your output',help=help)
 
     
