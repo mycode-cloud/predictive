@@ -19,7 +19,7 @@ def check_cases1(exists):
     expected = "female    6\nmale      4"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for first check."
+        help = r"Your code does not print the correct result for first describe print out."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -30,10 +30,24 @@ def check_cases2(exists):
     assert os.path.exists("StudentsPerformance.csv")
     
     actual = check50.run("python3 Question1.py").stdout()
+    expected = "female    9\nmale      3"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for second describe print out."
+        raise check50.Missing("Correct results",'your output',help=help)
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases3(exists):
+    """Program prints correct output 3"""
+    
+    check50.include("StudentsPerformance.csv")
+    assert os.path.exists("StudentsPerformance.csv")
+    
+    actual = check50.run("python3 Question1.py").stdout()
     expected = "The group of students with the highest mean scores in math, writing, and reading had a majority of female students."
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for second check."
+        help = r"Your code does not print the correct result for final conclusion sentence."
         raise check50.Missing("Correct results",'your output',help=help)
 
     
