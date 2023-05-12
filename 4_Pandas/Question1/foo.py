@@ -1,8 +1,6 @@
 import check50 # import the check50 module
 import check50.py
 import re
-import os
-import pandas as pd
 
 def sep_num(num):
     # regex that matches `num` not surrounded by any other numbers
@@ -19,9 +17,9 @@ def check_cases11(exists):
     """Program prints correct output"""
     
     actual = check50.run("python3 Question1.py").stdout()
-    expected = r"female"
+    expected = "female"
     
-    if not re.search(r"female", actual):
+    if not re.search(expected, actual):
         help = r"Your code does not print the correct result."
         raise check50.Missing("Correct results",'your output',help=help)
 
