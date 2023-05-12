@@ -1,7 +1,6 @@
 import check50 # import the check50 module
 import check50.py
 import re
-import os
 
 def sep_num(num):
     # regex that matches `num` not surrounded by any other numbers
@@ -16,9 +15,6 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases1(exists):
     """Program prints correct output 1"""
-    
-    check50.include("StudentsPerformance.csv")
-    assert os.path.exists("StudentsPerformance.csv")
     
     actual = check50.run("python3 Question1.py").stdout()
     expected = "7    98\n8    45\n9    98"
