@@ -1,6 +1,7 @@
 import check50 # import the check50 module
 import check50.py
 import re
+import os
 
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
@@ -11,6 +12,10 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases1(exists):
     """Program prints correct output 1"""
+    
+    check50.include("StudentsPerformance.csv")
+    assert os.path.exists("StudentsPerformance.csv")
+    
     
     actual = check50.run("python3 Question3.py").stdout()
     expected = "2           90             95             93\n3           47             57             44\n4           76             78             75"
@@ -24,6 +29,9 @@ def check_cases1(exists):
 def check_cases2(exists):
     """Program prints correct output 2"""
     
+    check50.include("StudentsPerformance.csv")
+    assert os.path.exists("StudentsPerformance.csv")
+    
     actual = check50.run("python3 Question3.py").stdout()
     expected = "994          63             63             62\n995          88             99             95\n996          62             55             55"
     
@@ -34,6 +42,9 @@ def check_cases2(exists):
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases3(exists):
     """Program prints correct output 3"""
+    
+    check50.include("StudentsPerformance.csv")
+    assert os.path.exists("StudentsPerformance.csv")
     
     actual = check50.run("python3 Question3.py").stdout()
     expected = "2          90             95             93"
