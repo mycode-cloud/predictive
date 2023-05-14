@@ -6,7 +6,7 @@ import os
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
-    check50.exists("Question3.py") # the actual check
+    check50.exists("Assignment_4.py") # the actual check
 
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -17,7 +17,7 @@ def check_cases1(exists):
     assert os.path.exists("StudentsPerformance.csv")
     
     
-    actual = check50.run("python3 Question3.py").stdout()
+    actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "2           90             95             93\n3           47             57             44\n4           76             78             75"
     
     if not re.search(expected, actual):
@@ -32,7 +32,7 @@ def check_cases2(exists):
     check50.include("StudentsPerformance.csv")
     assert os.path.exists("StudentsPerformance.csv")
     
-    actual = check50.run("python3 Question3.py").stdout()
+    actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "994          63             63             62\n995          88             99             95\n996          62             55             55"
     
     if not re.search(expected, actual):
@@ -46,7 +46,7 @@ def check_cases3(exists):
     check50.include("StudentsPerformance.csv")
     assert os.path.exists("StudentsPerformance.csv")
     
-    actual = check50.run("python3 Question3.py").stdout()
+    actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "2          90             95             93"
     
     if not re.search(expected, actual):
