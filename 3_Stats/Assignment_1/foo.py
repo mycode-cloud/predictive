@@ -10,13 +10,13 @@ def sep_num(num):
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
-    check50.exists("Question1.py") # the actual check
+    check50.exists("Assignment_1.py") # the actual check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
     """Program prints the correct mean for 'speeds' - Test 1"""
     
-    actual = check50.run("python3 Question1.py").stdout()
+    actual = check50.run("python3 Assignment_1.py").stdout()
     expected1 = 20.77333333333333
     
     if not re.search(sep_num(expected1), actual):
@@ -31,7 +31,7 @@ def check_cases():
 def check_cases2():
     """Program prints the correct mean for 'speeds2' - Test 2"""
     
-    actual = check50.run("python3 Question1.py").stdout()
+    actual = check50.run("python3 Assignment_1.py").stdout()
     expected2 = 18.3
     
     if not re.search(sep_num(expected2), actual):
@@ -45,10 +45,10 @@ def check_cases2():
 @check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
     """Program prints the correct mean for random data speeds - Test 3"""
-    check50.include("Question1_Sol.py")
-    check50.py.append_code("Question1.py", "Question1_Sol.py")
+    check50.include("Assignment_1_Sol.py")
+    check50.py.append_code("Assignment_1.py", "Assignment_1_Sol.py")
     
-    actual = check50.run("python3 Question1.py").stdout()
+    actual = check50.run("python3 Assignment_1.py").stdout()
     expected3 = 20.98
     
     if not re.search(sep_num(expected3), actual):
