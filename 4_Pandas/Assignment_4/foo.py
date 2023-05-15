@@ -46,6 +46,34 @@ def check_cases3(exists):
     assert os.path.exists("Canada_YouTube_Videos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
+    expected = "Total number of updated videos: 4822"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the number of updated videos."
+        raise check50.Missing("Correct results",'your output',help=help)
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases4(exists):
+    """Program prints correct output 4"""
+    
+    check50.include("Canada_YouTube_Videos.csv")
+    assert os.path.exists("Canada_YouTube_Videos.csv")
+    
+    actual = check50.run("python3 Assignment_4.py").stdout()
+    expected = "Total number of dropped videos: 178"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the number of dropped videos."
+        raise check50.Missing("Correct results",'your output',help=help)
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases5(exists):
+    """Program prints correct output 5"""
+    
+    check50.include("Canada_YouTube_Videos.csv")
+    assert os.path.exists("Canada_YouTube_Videos.csv")
+    
+    actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "The number of videos with no missing information that have more than one million views and likes is: 28"
     
     if not re.search(expected, actual):
