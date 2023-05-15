@@ -13,15 +13,15 @@ def exists(): # the name of the check
 def check_cases1(exists):
     """Program prints correct output 1"""
     
-    check50.include("StudentsPerformance.csv")
-    assert os.path.exists("StudentsPerformance.csv")
+    check50.include("Canada_YouTube_Videos.csv")
+    assert os.path.exists("Canada_YouTube_Videos.csv")
     
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "2           90             95             93\n3           47             57             44\n4           76             78             75"
+    expected = "The shape of the DataFrame is: (5000, 16)"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for your first10_numerical print out."
+        help = r"Your code does not print the correct result for the shape of the original DataFrame."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -29,26 +29,28 @@ def check_cases1(exists):
 def check_cases2(exists):
     """Program prints correct output 2"""
     
-    check50.include("StudentsPerformance.csv")
-    assert os.path.exists("StudentsPerformance.csv")
+    check50.include("Canada_YouTube_Videos.csv")
+    assert os.path.exists("Canada_YouTube_Videos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "994          63             63             62\n995          88             99             95\n996          62             55             55"
+    expected = "Index(['video_id', 'trending_date', 'title', 'channel_title', 'category_id', 'publish_time',
+       'tags', 'views', 'likes', 'dislikes', 'comment_count', 'thumbnail_link', 'description'],
+      dtype='object')"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for your last10_numerical print out."
+        help = r"Your code does not print the correct result for the updated list of columns after using the drop method."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases3(exists):
     """Program prints correct output 3"""
     
-    check50.include("StudentsPerformance.csv")
-    assert os.path.exists("StudentsPerformance.csv")
+    check50.include("Canada_YouTube_Videos.csv")
+    assert os.path.exists("Canada_YouTube_Videos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "2          90             95             93"
+    expected = "The number of videos with no missing information that have more than one million views and likes is: 28"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for your excellent_students print out."
+        help = r"Your code does not print the correct result for the super_vidoes DataFrame."
         raise check50.Missing("Correct results",'your output',help=help)
