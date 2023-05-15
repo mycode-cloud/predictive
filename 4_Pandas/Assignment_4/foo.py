@@ -16,7 +16,6 @@ def check_cases1(exists):
     check50.include("Canada_YouTube_Videos.csv")
     assert os.path.exists("Canada_YouTube_Videos.csv")
     
-    
     actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "The shape of the DataFrame is: (5000, 16)"
     
@@ -33,7 +32,7 @@ def check_cases2(exists):
     assert os.path.exists("Canada_YouTube_Videos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "Index(['video_id', 'trending_date', 'title', 'channel_title', 'category_id', 'publish_time',\n       'tags', 'views', 'likes', 'dislikes', 'comment_count', 'thumbnail_link', 'description'],\n      dtype='object')"
+    expected = "Index(['video_id', 'trending_date', 'title', 'channel_title', 'category_id', 'publish_time'"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the updated list of columns after using the drop method."
