@@ -17,7 +17,7 @@ def check_cases1(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "The shape of the DataFrame is: \(5000, 16\)"
+    expected = "The shape of the DataFrame is: \(4903, 16\)"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the shape of the original DataFrame."
@@ -46,7 +46,7 @@ def check_cases3(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "Total number of updated videos: 4822"
+    expected = "Total number of updated videos: 4725"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the number of updated videos."
