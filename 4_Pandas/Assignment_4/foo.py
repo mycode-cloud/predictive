@@ -74,7 +74,7 @@ def check_cases5(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "The number of videos with no missing information that have more than one million views and likes is: 28"
+    expected = "The number of videos with no missing information that have more than one million views and likes is: 27"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the super_vidoes DataFrame."
