@@ -13,8 +13,8 @@ def exists(): # the name of the check
 def check_cases1(exists):
     """Program prints correct output 1"""
     
-    check50.include("Canada_YouTube_Videos.csv")
-    assert os.path.exists("Canada_YouTube_Videos.csv")
+    check50.include("CanadaYouTubeVideos.csv")
+    assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "The shape of the DataFrame is: \(5000, 16\)"
@@ -28,8 +28,8 @@ def check_cases1(exists):
 def check_cases2(exists):
     """Program prints correct output 2"""
     
-    check50.include("Canada_YouTube_Videos.csv")
-    assert os.path.exists("Canada_YouTube_Videos.csv")
+    check50.include("CanadaYouTubeVideos.csv")
+    assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "Index\(\['video_id', 'trending_date', 'title', 'channel_title', 'category_id', 'publish_time',\n"
@@ -42,8 +42,8 @@ def check_cases2(exists):
 def check_cases3(exists):
     """Program prints correct output 3"""
     
-    check50.include("Canada_YouTube_Videos.csv")
-    assert os.path.exists("Canada_YouTube_Videos.csv")
+    check50.include("CanadaYouTubeVideos.csv")
+    assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "Total number of updated videos: 4822"
@@ -56,8 +56,8 @@ def check_cases3(exists):
 def check_cases4(exists):
     """Program prints correct output 4"""
     
-    check50.include("Canada_YouTube_Videos.csv")
-    assert os.path.exists("Canada_YouTube_Videos.csv")
+    check50.include("CanadaYouTubeVideos.csv")
+    assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "Total number of dropped videos: 178"
@@ -70,8 +70,8 @@ def check_cases4(exists):
 def check_cases5(exists):
     """Program prints correct output 5"""
     
-    check50.include("Canada_YouTube_Videos.csv")
-    assert os.path.exists("Canada_YouTube_Videos.csv")
+    check50.include("CanadaYouTubeVideos.csv")
+    assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
     expected = "The number of videos with no missing information that have more than one million views and likes is: 28"
