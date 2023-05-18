@@ -32,7 +32,7 @@ def check_cases2(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_5.py").stdout()
-    expected = "9  Sheldon is roasting pastor of the church\\nyoun...\nFalse"
+    expected = r"Sheldon is roasting pastor of the church\nyoun..." + "\nFalse"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the outcome of the '.is_unique' method applied 'df['video_id']."
