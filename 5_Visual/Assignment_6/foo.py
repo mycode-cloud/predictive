@@ -24,61 +24,7 @@ def check_cases1(exists):
         raise check50.Missing("Correct results",'your output',help=help)
         
         
-@check50.check(exists) # only run this check if the exists check has passed
-def check_cases2(exists):
-    """Program prints correct output 2"""
-    
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = r""
-    
-    if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the outcome of the '.is_unique' method applied 'df['video_id']."
-        raise check50.Missing("Correct results",'your output',help=help)
-        
-@check50.check(exists) # only run this check if the exists check has passed
-def check_cases3(exists):
-    """Program prints correct output 3"""
-    
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = ""
-    
-    if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the shape of the DataFrame after removing the rows that contain duplicate video_id entries."
-        raise check50.Missing("Correct results",'your output',help=help)
-        
-@check50.check(exists) # only run this check if the exists check has passed
-def check_cases4(exists):
-    """Program prints correct output 4"""
-    
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = ""
-    
-    if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the shape of the DataFrame after removing the rows that contain missing entries."
-        raise check50.Missing("Correct results",'your output',help=help)
-        
-@check50.check(exists) # only run this check if the exists check has passed
-def check_cases5(exists):
-    """Program prints correct output 5"""
-    
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = "The number of YouTube videos that contain the case-independent string 'amazon' in the 'tags' column is: 24"
-    
-    if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the number of YouTube videos that contain the case-independent string 'amazon' in the 'tags' column."
-        raise check50.Missing("Correct results",'your output',help=help)
+
         
         
         
