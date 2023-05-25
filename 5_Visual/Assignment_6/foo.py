@@ -16,7 +16,7 @@ def check_cases1(exists):
     check50.include("Big_Mart_Numerical.csv")
     assert os.path.exists("Big_Mart_Numerical.csv")
     
-    actual = check50.run("python3 Assignment_6.py").stdout()
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
     expected = "7          NaN         0\.127470          4022\.7636"
     
     if not re.search(expected, actual):
@@ -30,7 +30,7 @@ def check_cases2(exists):
     check50.include("Big_Mart_Numerical.csv")
     assert os.path.exists("Big_Mart_Numerical.csv")
     
-    actual = check50.run("python3 Assignment_6.py").stdout()
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
     expected = "7       16\.200         0\.016687          1076\.5986"
     
     if not re.search(expected, actual):
