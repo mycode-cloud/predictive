@@ -38,6 +38,18 @@ def check_cases2(exists):
         raise check50.Missing("Correct results",'your output',help=help)
 
         
-        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases3(exists):
+    """Program prints correct output 3"""
+    
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
+    expected = "Intercept        2235\.5061     58\.934     37\.932      0\.000    2119\.978    2351\.034"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the print out of results.summary()."
+        raise check50.Missing("Correct results",'your output',help=help)
         
         
