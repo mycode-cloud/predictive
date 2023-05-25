@@ -8,4 +8,4 @@ check50:
   dependencies:
     - pandas
     - scikit-learn
-    - statsmodels.formula.api
+    - statsmodels
