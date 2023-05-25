@@ -13,8 +13,8 @@ def exists(): # the name of the check
 def check_cases1(exists):
     """Program prints correct output 1"""
     
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
+    check50.include("BigMartNumerical.csv")
+    assert os.path.exists("BigMartNumerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout()
     expected = r"^The results are probably not reliable because the R-square value is relatively small\.$"
