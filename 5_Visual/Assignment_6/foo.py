@@ -16,7 +16,7 @@ def check_cases1(exists):
     assert os.path.exists("Big_Mart_Numerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = "7          NaN         0.127470          4022.7636"
+    expected = "7          NaN         0\.127470          4022\.7636"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the first print out of 10 rows of 'bmn' using the '.head()' method."
@@ -30,7 +30,7 @@ def check_cases2(exists):
     assert os.path.exists("Big_Mart_Numerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = "7       16.200         0.016687          1076.5986"
+    expected = "7       16\.200         0\.016687          1076\.5986"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the second print out of 10 rows of 'bmn' using the '.head()' method."
@@ -44,7 +44,7 @@ def check_cases3(exists):
     assert os.path.exists("Big_Mart_Numerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = "Intercept        2235.5061     58.934     37.932      0.000    2119.978    2351.034"
+    expected = "Intercept        2235\.5061     58\.934     37\.932      0\.000    2119\.978    2351\.034"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the results.summary() print out."
