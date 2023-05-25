@@ -16,7 +16,7 @@ def check_cases1(exists):
     assert os.path.exists("Big_Mart_Numerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = r"\bNaN\b.*\b0\.127470\b.*\b4022\.7636\n"
+    expected = r"\(8523, 3\)"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the first print out of 10 rows of 'bmn' using the '.head()' method."
