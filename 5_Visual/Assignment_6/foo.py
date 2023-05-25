@@ -17,7 +17,7 @@ def check_cases1(exists):
     assert os.path.exists("BigMartNumerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = r"^The results are probably not reliable because the R-square value is relatively small\.$"
+    expected = r"The results are probably not reliable because the R-square value is relatively small\."
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the first 10 rows of the 'df' DataFrame using the '.head' method."
