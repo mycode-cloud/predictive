@@ -23,7 +23,19 @@ def check_cases1(exists):
         help = r"Your code does not print the correct result for the first print out of the first 10 rows of the 'bmn' DataFrame using the '.head' method."
         raise check50.Missing("Correct results",'your output',help=help)
         
-        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases2(exists):
+    """Program prints correct output 2"""
+    
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    
+    actual = check50.run("python3 Assignment_6.py").stdout()
+    expected = r"7       16\.200         0\.016687          1076\.5986"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the second print out of the first 10 rows of the 'bmn' DataFrame using the '.head' method."
+        raise check50.Missing("Correct results",'your output',help=help)
 
         
         
