@@ -31,7 +31,7 @@ def check_cases2(exists):
     assert os.path.exists("Big_Mart_Numerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout()
-    expected = r"7       16\.200         0\.016687          1076\.5986"
+    expected = "7       16\.200         0\.016687          1076\.5986"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the second print out of the first 10 rows of the 'bmn' DataFrame using the '.head' method."
