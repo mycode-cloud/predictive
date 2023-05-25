@@ -66,3 +66,17 @@ def check_cases4(exists):
         help = r"Your code does not print the correct result for the adjusted coefficient of determination."
         raise check50.Missing("Correct results",'your output',help=help)
         
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases5(exists):
+    """Program prints correct output 5"""
+    
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
+    expected = "The results are probably not reliable because the R-square value is relatively small\."
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct final message."
+        raise check50.Missing("Correct results",'your output',help=help)
+        
