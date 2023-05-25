@@ -19,7 +19,7 @@ def check_cases1(exists):
     expected = "7          NaN         0.127470          4022.7636"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the first print out 10 rows of 'bmn' using the '.head()' method."
+        help = r"Your code does not print the correct result for the first print out of 10 rows of 'bmn' using the '.head()' method."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -33,7 +33,7 @@ def check_cases2(exists):
     expected = "7       16.200         0.016687          1076.5986"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the second print out 10 rows of 'bmn' using the '.head()' method."
+        help = r"Your code does not print the correct result for the second print out of 10 rows of 'bmn' using the '.head()' method."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
