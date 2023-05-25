@@ -19,7 +19,7 @@ def check_cases1(exists):
     expected = r"\(8523, 3\)"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the first print out of 10 rows of 'bmn' using the '.head()' method."
+        help = r"Your code does not print the correct result for the first print out of 10 rows of bmn using the head() method\."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
