@@ -3,10 +3,6 @@ import check50.py
 import re
 import os
 
-check50.include("Big_Mart_Numerical.csv")
-assert os.path.exists("Big_Mart_Numerical.csv")
-actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
-
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
@@ -15,6 +11,10 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases1():
     """Program prints correct output 1"""
+    
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
     
     expected = "7          NaN         0\.127470          4022\.7636"
     
@@ -25,6 +25,10 @@ def check_cases1():
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases2():
     """Program prints correct output 2"""
+    
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
     
     expected = "7       16\.200         0\.016687          1076\.5986"
     
@@ -37,6 +41,10 @@ def check_cases2():
 def check_cases3():
     """Program prints correct output 3"""
     
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
+    
     expected = "Intercept        2235\.5061     58\.934     37\.932      0\.000    2119\.978    2351\.034"
     
     if not re.search(expected, actual):
@@ -47,6 +55,10 @@ def check_cases3():
 def check_cases4():
     """Program prints correct output 4"""
     
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
+    
     expected = "adjusted coefficient of determination:  0\.007167665509702048"
     
     if not re.search(expected, actual):
@@ -56,6 +68,10 @@ def check_cases4():
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases5():
     """Program prints correct output 5"""
+    
+    check50.include("Big_Mart_Numerical.csv")
+    assert os.path.exists("Big_Mart_Numerical.csv")
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
     
     expected = "The results are probably not reliable because the R-square value is relatively small\."
     
