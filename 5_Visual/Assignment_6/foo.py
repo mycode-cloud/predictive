@@ -12,6 +12,7 @@ def exists(): # the name of the check
     assert os.path.exists("Big_Mart_Numerical.csv")
     
     actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
+    return actual
 
         
 @check50.check(exists) # only run this check if the exists check has passed
