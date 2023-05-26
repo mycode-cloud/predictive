@@ -3,6 +3,8 @@ import check50.py
 import re
 import os
 
+actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
+
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
@@ -10,13 +12,10 @@ def exists(): # the name of the check
     
     check50.include("Big_Mart_Numerical.csv")
     assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
-    return actual
 
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases1(exists):
+def check_cases1():
     """Program prints correct output 1"""
     
     expected = "7          NaN         0\.127470          4022\.7636"
