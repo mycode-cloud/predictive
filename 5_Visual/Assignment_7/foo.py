@@ -16,7 +16,7 @@ def check_cases1():
     assert os.path.exists("Big_Mart.csv")
     actual = check50.run("python3 Assignment_7.py").stdout(timeout=20)
     
-    expected = r"Low Fat\s*2774"
+    expected = r"Low Fat\s*2774\s*\nRegular\s*1575"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the first print out of .value_counts for the Item_Fat_Content column."
