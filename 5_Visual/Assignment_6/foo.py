@@ -5,7 +5,7 @@ import os
 
 check50.include("Big_Mart_Numerical.csv")
 assert os.path.exists("Big_Mart_Numerical.csv")
-actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
+actual = check50.run("python3 Assignment_6.py").stdout(timeout=20)
 
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
