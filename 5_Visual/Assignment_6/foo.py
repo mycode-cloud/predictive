@@ -25,13 +25,9 @@ def check_cases1():
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases2(exists):
+def check_cases2():
     """Program prints correct output 2"""
     
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
     expected = "7       16\.200         0\.016687          1076\.5986"
     
     if not re.search(expected, actual):
@@ -40,13 +36,9 @@ def check_cases2(exists):
 
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases3(exists):
+def check_cases3():
     """Program prints correct output 3"""
     
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
     expected = "Intercept        2235\.5061     58\.934     37\.932      0\.000    2119\.978    2351\.034"
     
     if not re.search(expected, actual):
@@ -54,13 +46,9 @@ def check_cases3(exists):
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases4(exists):
+def check_cases4():
     """Program prints correct output 4"""
     
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
     expected = "adjusted coefficient of determination:  0\.007167665509702048"
     
     if not re.search(expected, actual):
@@ -68,13 +56,9 @@ def check_cases4(exists):
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases5(exists):
+def check_cases5():
     """Program prints correct output 5"""
     
-    check50.include("Big_Mart_Numerical.csv")
-    assert os.path.exists("Big_Mart_Numerical.csv")
-    
-    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
     expected = "The results are probably not reliable because the R-square value is relatively small\."
     
     if not re.search(expected, actual):
