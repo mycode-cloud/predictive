@@ -45,8 +45,8 @@ def check_cases3():
     assert os.path.exists("Big_Mart.csv")
     actual = check50.run("python3 Assignment_7.py").stdout(timeout=20)
     
-    expected = r"\'Item_Fat_Content_Low_Fat\', \'Item_Fat_Content_Regular\'"
+    expected = r"\'Item_Outlet_Sales\', \'Item_Fat_Content_Low_Fat\', \'Item_Fat_Content_Regular\'"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the first print out of the column names in bm_one using the tolist() method."
+        help = r"Your code does not print the correct result for the second print out of the column names in bm_one using the tolist() method.  Make sure that you have dropped Item_Fat_Content_Low_Fat column."
         raise check50.Missing("Correct results",'your output',help=help)
