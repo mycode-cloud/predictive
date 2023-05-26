@@ -7,8 +7,6 @@ import os
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
     check50.exists("Assignment_6.py") # the actual check
-    
-    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
 
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -18,6 +16,7 @@ def check_cases1(exists):
     check50.include("Big_Mart_Numerical.csv")
     assert os.path.exists("Big_Mart_Numerical.csv")
     
+    actual = check50.run("python3 Assignment_6.py").stdout(timeout=10)
     expected = "7          NaN         0\.127470          4022\.7636"
     
     if not re.search(expected, actual):
