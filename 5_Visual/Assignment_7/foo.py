@@ -66,3 +66,20 @@ def check_cases4():
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the .head() output of bm_one after applying .astype(int) method and changing to binary data form."
         raise check50.Missing("Correct results",'your output',help=help)
+        
+        
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases5(exists):
+    """Program prints correct output 5"""
+    
+    check50.include("Big_Mart.csv")
+    assert os.path.exists("Big_Mart.csv")
+    
+    actual = check50.run("python3 Assignment_7.py").stdout()
+    expected = "Omnibus:\s*175\.726\s*Durbin-Watson:\s*1\.962"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the print out of results.summary()."
+        raise check50.Missing("Correct results",'your output',help=help)
+
