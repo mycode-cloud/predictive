@@ -5,4 +5,9 @@ submit50:
 check50:
   checks:  foo.py
   files: *submit50_files
+  dependencies:
+    - pandas
+    - scikit-learn
+    - statsmodels
+    - matplotlib
   
