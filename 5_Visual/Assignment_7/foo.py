@@ -70,13 +70,13 @@ def check_cases4():
         
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases5(exists):
+def check_cases5():
     """Program prints correct output 5"""
     
     check50.include("Big_Mart.csv")
     assert os.path.exists("Big_Mart.csv")
     
-    actual = check50.run("python3 Assignment_7.py").stdout()
+    actual = check50.run("python3 Assignment_7.py").stdout(timeout=20)
     expected = "Omnibus:\s*175\.726\s*Durbin-Watson:\s*1\.962"
     
     if not re.search(expected, actual):
@@ -85,13 +85,13 @@ def check_cases5(exists):
         
         
 @check50.check(exists) # only run this check if the exists check has passed
-def check_cases6(exists):
+def check_cases6():
     """Program prints correct output 6"""
     
     check50.include("Big_Mart.csv")
     assert os.path.exists("Big_Mart.csv")
     
-    actual = check50.run("python3 Assignment_7.py").stdout()
+    actual = check50.run("python3 Assignment_7.py").stdout(timeout=20)
     expected = r"The predicted Item_Outlet_Sales for the test data in bm_xtest is:\s*2248\.44"
     
     if not re.search(expected, actual):
