@@ -13,10 +13,10 @@ def check_cases1():
     
     actual = check50.run("python3 Assignment_8.py").stdout(timeout=20)
     
-    expected = r"Low Fat\s*2774\s*\nRegular\s*1575\s*\nLF\s*177\s*\nreg\s*71\s*\nlow\s*fat\s*53"
+    expected = r"\s*\[ 0\.  0\.  0\. \.\.\. 16\.  9\.  0\.\]"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the first print out of .value_counts for the Item_Fat_Content column."
+        help = r"Your code does not print the correct result for the first print out 'x'."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -25,10 +25,10 @@ def check_cases2():
    
     actual = check50.run("python3 Assignment_8.py").stdout(timeout=20)
     
-    expected = "Low Fat\s*3004\s*\nRegular\s*1646"
+    expected = "0\.9992044550517104"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the second print out of .value_counts for the Item_Fat_Content column."
+        help = r"Your code does not print the correct result for model.score(x_train,y_train)."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -38,9 +38,9 @@ def check_cases3():
    
     actual = check50.run("python3 Assignment_8.py").stdout(timeout=20)
     
-    expected = r"\'Item_Outlet_Sales\', \'Item_Fat_Content_Regular\'"
+    expected = r"\s*\[ 0  0  0  0  0  0  0  0  2 57\]\]"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the second print out of the column names in bm_one using the tolist() method.  Make sure that you have dropped Item_Fat_Content_Low_Fat column."
+        help = r"Your code does not print the correct result for the first confusion matrix print out."
         raise check50.Missing("Correct results",'your output',help=help)
     
