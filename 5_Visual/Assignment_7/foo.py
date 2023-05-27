@@ -82,4 +82,19 @@ def check_cases5(exists):
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the print out of results.summary()."
         raise check50.Missing("Correct results",'your output',help=help)
+        
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases6(exists):
+    """Program prints correct output 6"""
+    
+    check50.include("Big_Mart.csv")
+    assert os.path.exists("Big_Mart.csv")
+    
+    actual = check50.run("python3 Assignment_7.py").stdout()
+    expected = r"The predicted Item_Outlet_Sales for the test data in bm_xtest is:\s*2248\.44"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the final statement print out for the 'prediction' variable."
+        raise check50.Missing("Correct results",'your output',help=help)
 
