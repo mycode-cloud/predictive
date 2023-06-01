@@ -72,3 +72,19 @@ def check_cases4():
         help = r"Your code does not print the correct result for the column headings of the DataFrame with spaces replaced by underscores."
         raise check50.Missing("Correct results",'your output',help=help)
         
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases5():
+    """Program prints correct output 5"""
+    
+    check50.include("Airbnb_1.csv")
+    assert os.path.exists("Airbnb_1.csv")
+   
+    actual = check50.run("python3 Assignment_1.py").stdout(timeout=20)
+    
+    expected = "7\s*1005202\s*1060\.0\s*212\.0\s*45\.0\s*49\.0\s*0\.40"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the last .head(10) print statement."
+        raise check50.Missing("Correct results",'your output',help=help)
+        
