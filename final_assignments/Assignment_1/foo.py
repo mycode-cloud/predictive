@@ -39,3 +39,19 @@ def check_cases2():
         help = r"Your code does not print the correct result for the shape of the original DataFrame."
         raise check50.Missing("Correct results",'your output',help=help)
         
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases3():
+    """Program prints correct output 3"""
+    
+    check50.include("Airbnb_1.csv")
+    assert os.path.exists("Airbnb_1.csv")
+   
+    actual = check50.run("python3 Assignment_1.py").stdout(timeout=20)
+    
+    expected = "After dropping all rows containing empty entries, the shape of the updated DataFrame is: \(8388, 7\)"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the shape of the updated DataFrame."
+        raise check50.Missing("Correct results",'your output',help=help)
+        
