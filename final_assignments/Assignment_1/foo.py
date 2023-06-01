@@ -1,6 +1,7 @@
 import check50 # import the check50 module
 import check50.py
 import re
+inport os
 
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
@@ -10,6 +11,9 @@ def exists(): # the name of the check
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases1():
     """Program prints correct output 1"""
+    
+    check50.include("Airbnb_1.csv")
+    assert os.path.exists("Airbnb_1.csv")
     
     actual = check50.run("python3 Assignment_1.py").stdout(timeout=20)
     
