@@ -1,8 +1,14 @@
 submit50:
   files: &submit50_files
     - !exclude "*"
-    - !require Question2.py
+    - !require Assignment_1.py
+    - !require Assignment_2.py
 check50:
   checks:  foo.py
   files: *submit50_files
-
+  dependencies:
+    - pandas
+    - numpy
+    - scitkit-learn
+    - statsmodels
+    - matplotlib
