@@ -10,6 +10,6 @@ check50:
   dependencies:
     - pandas
     - numpy
-    - scitkit-learn
+    - scikit-learn
     - statsmodels
     - matplotlib
