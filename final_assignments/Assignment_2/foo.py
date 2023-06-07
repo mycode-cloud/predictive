@@ -19,3 +19,15 @@ def check_cases1():
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the shape of the original DataFrame."
         raise check50.Missing("Correct results",'your output',help=help)
+        
+@check50.check(exists) # only run this check if the exists check has passed
+def check_cases2():
+    """Program prints correct output 2"""
+    
+    actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
+    
+    expected = "After dropping all rows containing empty entries\, the shape of the updated DataFrame is:\s*\(6893, 11\)"
+    
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for the shape of the DataFrame after dropping all rows containing empty entries."
+        raise check50.Missing("Correct results",'your output',help=help)
