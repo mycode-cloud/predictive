@@ -107,7 +107,7 @@ def check_cases8():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "service_fee\s*1.858834"
+    expected = "service_fee\s*1\.858834"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the service_fee regression coefficient."
