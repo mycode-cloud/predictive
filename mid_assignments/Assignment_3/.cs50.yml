@@ -1,4 +1,4 @@
-ubmit50:
+submit50:
   files: &submit50_files
     - !exclude "*"
     - !require Assignment_3.py
