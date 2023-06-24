@@ -1,8 +1,15 @@
 submit50:
   files: &submit50_files
     - !exclude "*"
-    - !require Question3.py
+    - !require Assignment_1.py
+    - !require Assignment_3.py
+    - !require Airbnb_3.csv
 check50:
   checks:  foo.py
   files: *submit50_files
-
+  dependencies:
+    - pandas
+    - numpy
+    - scikit-learn
+    - statsmodels
+    - matplotlib
