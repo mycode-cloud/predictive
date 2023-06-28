@@ -97,7 +97,7 @@ def extract_values_check4():
     assert os.path.exists("sampletext2.txt")
 
     actual = check50.run("python3 Assignment_2.py").stdin('sampletext2.txt').stdout()
-    expected = "{'Revenue': 6789012.0, 'Expenses': 5012345.0, 'Net Profit': 1776667.0, 'Units Sold': 18000.0, 'Average Unit Price': 398.33}"
+    expected = "{'Revenue': 6789012.0, 'Expenses': 5012345.0, 'Net Profit': 1776667.0, 'Units Sold': 18000.0, 'Average Unit Price': 398.33, 'Equity': 2222212.0}""
         
     if not re.search(expected, actual):
         #help = "extract_values() function does not produce the correct output"
