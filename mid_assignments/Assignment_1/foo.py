@@ -42,7 +42,7 @@ def stats_check1():
     sample_list = [1.2, 2.0, 3.4, 4.1, 5.0]
     ex_mean = statistics.mean(sample_list)
     ex_median = statistics.median(sample_list)
-    ex_mode = float('nan')
+    ex_mode = 'nan'
     ex_stdv = statistics.stdev(sample_list)
     ex_range = max(sample_list) - min(sample_list)
     
@@ -55,7 +55,7 @@ def stats_check1():
     if not re.search(expected, actual, re.IGNORECASE):
        
         missing_v, help = find_values(actual, {'Mean':ex_mean, 'Median': ex_median, 'Mode': ex_mode, 'Standard deviation':ex_stdv, 'Range':ex_range})
-        if missing_v == 0:
+        if missing_v == 2:
             raise check50.Missing(ex_mode, actual, help=help)
         else:
             raise check50.Mismatch(expected_dis, actual, help=help)
@@ -73,7 +73,7 @@ def stats_check2():
     sample_list = [2.1, 2.1, 3.0, 4.0, 5.0, 5.0, 5.0, 9.1]
     ex_mean = statistics.mean(sample_list)
     ex_median = statistics.median(sample_list)
-    ex_mode = 5.0
+    ex_mode = float(5.0)
     ex_stdv = statistics.stdev(sample_list)
     ex_range = max(sample_list) - min(sample_list)
     
@@ -86,7 +86,7 @@ def stats_check2():
     if not re.search(expected, actual, re.IGNORECASE):
        
         missing_v, help = find_values(actual, {'Mean':ex_mean, 'Median': ex_median, 'Mode': ex_mode, 'Standard deviation':ex_stdv, 'Range':ex_range})
-        if missing_v == 0:
+        if missing_v == 2:
             raise check50.Missing(ex_mode, actual, help=help)
         else:
             raise check50.Mismatch(expected_dis, actual, help=help)
