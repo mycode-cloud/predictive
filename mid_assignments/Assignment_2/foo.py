@@ -16,7 +16,7 @@ def read_text_check1():
     check50.include("sample.txt")
     assert os.path.exists("sample.txt")
 
-    actual = check50.run("python3 Assignment_2.py").stdin(sample.txt).stdout()
+    actual = check50.run("python3 Assignment_2.py").stdin('sample.txt').stdout()
     expected = r"- Revenue: \$1,234,567" #"- Expenses: \$4,123,456"
         
     if not re.search(expected, actual):
