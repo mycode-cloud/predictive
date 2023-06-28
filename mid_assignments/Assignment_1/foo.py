@@ -40,12 +40,19 @@ def stats_check1():
     actual = check50.run("python3 Assignment_1.py").stdin(sample_list).stdout()
     # Retrieve the expected values using the statistics module
     sample_list = [1.2, 2.0, 3.4, 4.1, 5.0]
-    ex_mean = statistics.mean(sample_list)
-    ex_median = statistics.median(sample_list)
-    ex_mode = float('nan')
-    ex_stdv = statistics.stdev(sample_list)
-    ex_range = max(sample_list) - min(sample_list)
-    
+    ex_mean0 = statistics.mean(sample_list)
+    ex_median0 = statistics.median(sample_list)
+    ex_mode0 = float('nan')
+    ex_stdv0 = statistics.stdev(sample_list)
+    ex_range0 = max(sample_list) - min(sample_list)
+
+# Escape special characters in the values
+    ex_mean = re.escape(str(ex_mean0))
+    ex_median = re.escape(str(ex_median0))
+    ex_mode = re.escape(str(ex_mode0))
+    ex_stdv = re.escape(str(ex_stdv0))
+    ex_range = re.escape(str(ex_range0))
+ 
     expected = fr"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}\s*\nStandard deviation:\s*{ex_stdv}\s*\nRange:\s*{ex_range}"
     #display version of expected to show when error raised 
 
