@@ -48,6 +48,9 @@ def stats_check1():
     
     expected = fr"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}\s*\nStandard deviation:\s*{ex_stdv}\s*\nRange:\s*{ex_range}"
     #display version of expected to show when error raised
+
+    expected = re.compile(expected, re.IGNORECASE)  
+
     expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
     
     # Compare the expected values with the stats(l) output
@@ -78,6 +81,9 @@ def stats_check2():
     
     expected = fr"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}\s*\nStandard deviation:\s*{ex_stdv}\s*\nRange:\s*{ex_range}"    
     #display version of expected to show when error raised
+
+    expected = re.compile(expected, re.IGNORECASE)  
+    
     expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
     
     # Compare the expected values with the stats(l) output
