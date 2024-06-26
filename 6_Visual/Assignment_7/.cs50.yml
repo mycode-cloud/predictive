@@ -1,7 +1,7 @@
 submit50:
   files: &submit50_files
     - !exclude "*"
-    - !require Assignment_7.py
+    - !require Assignment_8.py
 check50:
   checks:  foo.py
   files: *submit50_files
@@ -9,4 +9,5 @@ check50:
     - pandas
     - scikit-learn
     - statsmodels
+    - matplotlib
   

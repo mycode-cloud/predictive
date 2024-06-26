@@ -1,29 +1,8 @@
 import check50
-import statistics
+import check50.py
 import os
 import re
-import numpy as np
 
-
-# Look up the values other than the mode in the student' answer and provide feedback. used in check50.Mismatch
-def find_values(text, dic):
-    
-    missing_values = []
-    for key, value in dic.items():
-        pattern = fr"{value}"
-        match = re.search(pattern, text)
-        if not match:
-            missing_values.append(f"{key}: {value}")
-
-    if len(missing_values) == 0:
-        help = "All statistics except the mode is correct. Check your find_mode() function."
-    else:
-        missing_info = "\n ".join(missing_values)
-        help = f"Mismatch. Check your stats(l) function. Missing value(s):\n {missing_info}"
-    
-    return(len(missing_values),help)
-
-        
 @check50.check()
 def file_exists_check():
     """Check if the 'Assignment_1.py' file exists"""
@@ -31,62 +10,114 @@ def file_exists_check():
         raise check50.Failure("The 'Assignment_1.py' file does not exist")
  
 @check50.check(file_exists_check)
-def stats_check1():
-    """Check the output of the stats(l) function"""
+def read_text_check1():
+    """Check the output of the read_text() function (line 4) for sample.txt""" # file provided to students
     
-    # Define a sample list to test the stats(l) function
-    sample_list = '1.2, 2.0, 3.4, 4.1, 5.0'
+    check50.include("sample.txt")
+    assert os.path.exists("sample.txt")
 
-    actual = check50.run("python3 Assignment_1.py").stdin(sample_list).stdout()
-    # Retrieve the expected values using the statistics module
-    sample_list = [1.2, 2.0, 3.4, 4.1, 5.0]
-    ex_mean = statistics.mean(sample_list)
-    ex_median = statistics.median(sample_list)
-    ex_mode = float('nan')
-    ex_stdv = statistics.stdev(sample_list)
-    ex_range = max(sample_list) - min(sample_list)
- 
-    expected = fr"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}"
-    #display version of expected to show when error raised 
+    actual = check50.run("python3 Assignment_1.py").stdin('sample.txt').stdout()
+    expected = r"- Revenue: \$1,234,567" #"- Expenses: \$4,123,456"
+        
+    if not re.search(expected, actual):
+        help = "read_text() function does not produce the correct output"
+        #raise check50.Mismatch(expected, actual, help=help)
+        raise check50.Failure("read_text() function does not produce the correct output")
 
-    expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nRange: {ex_range}"
+@check50.check(file_exists_check)
+def read_text_check2():
+    """Check the output of the read_text() function (line 4) for sampletext2.txt""" # file NOT provided to students
     
-    # Compare the expected values with the stats(l) output
-    if not re.search(expected, actual, re.IGNORECASE):
-       
-        missing_v, help = find_values(actual, {'Mean':ex_mean, 'Median': ex_median})
-        if missing_v == 0:
-            raise check50.Missing(ex_mode, actual, help=help)
-        else:
-            raise check50.Mismatch(expected_dis, actual, help=help)
-        #raise check50.Failure("The stats(l) function does not produce the correct output")
+    check50.include("sampletext2.txt")
+    assert os.path.exists("sampletext2.txt")
+
+    actual = check50.run("python3 Assignment_1.py").stdin('sampletext2.txt').stdout()
+    expected = r"- Net Profit: \$1,555,445"
+        
+    if not re.search(expected, actual):
+        help = "read_text() function does not produce the correct output"
+        #raise check50.Mismatch(expected, actual, help=help)
+        raise check50.Failure("read_text() function does not produce the correct output")        
         
 @check50.check(file_exists_check)
-def stats_check2():
-    """Check the output of the stats(l) function"""
+def extract_values_check1():
+    """Check the output of the extract_values() function for Expenses of Location1 for sample.txt""" # file provided to students
     
-    # Define a sample list to test the stats(l) function
-    sample_list = '2.1, 2.1, 3.0, 4.0, 5.0, 5.0, 5.0, 9.1'
+    check50.include("sample.txt")
+    assert os.path.exists("sample.txt")
 
-    actual = check50.run("python3 Assignment_1.py").stdin(sample_list).stdout()
-    # Retrieve the expected values using the statistics module
-    sample_list = [2.1, 2.1, 3.0, 4.0, 5.0, 5.0, 5.0, 9.1]
-    ex_mean = statistics.mean(sample_list)
-    ex_median = statistics.median(sample_list)
-    ex_mode = statistics.mode(sample_list)
-    ex_stdv = statistics.stdev(sample_list)
-    ex_range = max(sample_list) - min(sample_list)
+    actual = check50.run("python3 Assignment_1.py").stdin('sample.txt').stdout()
+    expected = "987654.0"
+        
+    if not re.search(expected, actual):
+        if re.search(r"\$987,654", actual): # if the correct value with $ and comma exists, it means make_value_float() does not work properly or not applied
+            help = "Expected a float value for Expenses. make_value_float() function does not produce the correct output"
+            raise check50.Mismatch(expected, actual, help=help)
+        raise check50.Failure("extract_values() function does not produce the correct output")
+        
+        
+@check50.check(file_exists_check)
+def extract_values_check2():
+    """Check the output of the extract_values() function for Location2 for sample.txt""" # file provided to students
     
-    expected = f"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}"    
-    #display version of expected to show when error raised
+    check50.include("sample.txt")
+    assert os.path.exists("sample.txt")
+
+    actual = check50.run("python3 Assignment_1.py").stdin('sample.txt').stdout()
+    expected = "{'Revenue': 2345678.0, 'Expenses': 1876543.0, 'Net Profit': 469135.0, 'Units Sold': 15000.0, 'Average Unit Price': 156.42, 'Equity': 2222212.0}"
+        
+    if not re.search(expected, actual):
+        #help = "extract_values() function does not produce the correct output"
+        #raise check50.Mismatch(expected, actual, help=help)
+        help = "Make sure the financials for Location2 are in a dictionary and all values are float"
+        raise check50.Failure("extract_values() function does not produce the correct output", help = help)
+        
+@check50.check(file_exists_check)
+def extract_values_check3():
+    """Check the output of the extract_values() function for Expenses of Location1 for sampletext2.txt""" # file NOT provided to students
     
-    expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}"
+    check50.include("sampletext2.txt")
+    assert os.path.exists("sampletext2.txt")
+
+    actual = check50.run("python3 Assignment_1.py").stdin('sampletext2.txt').stdout()
+    expected = "4123456.0"
+        
+    if not re.search(expected, actual):
+        if re.search(r"\$4,123,456", actual): # if the correct value with $ and comma exists, it means make_value_float() does not work properly or not applied
+            help = "Expected a float value for Expenses. make_value_float() function does not produce the correct output"
+            raise check50.Mismatch(expected, actual, help=help)
+        raise check50.Failure("extract_values() function does not produce the correct output")
+        
+        
+@check50.check(file_exists_check)
+def extract_values_check4(): 
+    """Check the output of the extract_values() function for Location2 for sampletext2.txt""" # file NOT provided to students
     
-    # Compare the expected values with the stats(l) output
-    if not re.search(expected, actual, re.IGNORECASE):
-       
-        missing_v, help = find_values(actual, {'Mean':ex_mean, 'Median': ex_median})
-        if missing_v == 0:
-            raise check50.Missing(ex_mode, actual, help=help)
-        else:
-            raise check50.Mismatch(expected_dis, actual, help=help)
+    check50.include("sampletext2.txt")
+    assert os.path.exists("sampletext2.txt")
+
+    actual = check50.run("python3 Assignment_1.py").stdin('sampletext2.txt').stdout()
+    expected = "{'Revenue': 6789012.0, 'Expenses': 5012345.0, 'Net Profit': 1776667.0, 'Units Sold': 18000.0, 'Average Unit Price': 398.33, 'Equity': 2469107.0}"
+        
+    if not re.search(expected, actual):
+        #help = "extract_values() function does not produce the correct output"
+        #raise check50.Mismatch(expected, actual, help=help)
+        help = "Make sure the financials for Location2 are in a dictionary and all values are float"
+        raise check50.Failure("extract_values() function does not produce the correct output", help = help)
+
+@check50.check(file_exists_check)
+def make_value_float_check():
+    '''Checks the out put of make_value_float() function for extra_check.py'''
+
+    check50.include("sample.txt")
+    assert os.path.exists("sample.txt")
+    check50.include("extra_checks.py")
+    
+    check50.py.append_code("Assignment_1.py", "extra_checks.py")
+    actual = check50.run("python3 Assignment_1.py").stdin('sample.txt').stdout()
+    expected = "1234008.23"
+
+    if not re.search(expected, actual):
+        help = "make_value_float() function does not produce the correct output"
+        raise check50.Mismatch(expected, actual, help=help)
+        #raise check50.Failure("make_value_float() function does not produce the correct output")

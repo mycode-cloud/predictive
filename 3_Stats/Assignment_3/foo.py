@@ -1,11 +1,6 @@
 import check50 # import the check50 module
-import check50.py
 import re
-
-def sep_num(num):
-    # regex that matches `num` not surrounded by any other numbers
-    # (so coins(2) won't match e.g. 123)
-    return fr"(?<!\d){num}(?!\d)"
+import check50.py
 
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
@@ -14,44 +9,31 @@ def exists(): # the name of the check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
-    """Program prints the correct variance and standard deviation for 'speeds' - Test 1"""
+    """Program prints correct weighted average - Test 1"""
+    actual = check50.run("python3 Assignment_3.py").stdin("19").stdin("12").stdin("6").stdin("63").stdin("81").stdin("42").stdin("79").stdin("81").stdout()
+    expected = "76.2"
     
-    actual = check50.run("python3 Assignment_n3.py").stdout()
-    expected1 = "[26.05885057  5.10478703]"
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result for SAMPLE_DATA#1."
+        raise check50.Missing('Correct weighted average','your output',help=help)
     
-    if not re.search(expected1, actual):
-        help = r"Your code does not print the correct variance and standard deviation for 'speeds'."
-        raise check50.Mismatch("Correct output", "your output", help=help)
-        
-        
-        
-    
-        
 @check50.check(check_cases) # only run this check if the exists check has passed
 def check_cases2():
-    """Program prints the correct variance and standard deviation for 'speeds2' - Test 2"""
+    """Program prints correct weighted average - Test 2"""
+    actual = check50.run("python3 Assignment_3.py").stdin("28").stdin("6").stdin("18").stdin("48").stdin("47").stdin("83").stdin("55").stdin("89").stdout()
+    expected = "70.76"
     
-    actual = check50.run("python3 Assignment_3.py").stdout()
-    expected2 = "[30.506      5.5232237]"
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result SAMPLE_DATA#2."
+        raise check50.Missing('Correct weighted average','your output',help=help)
     
-    if not re.search(expected2, actual):
-        help = r"Your code does not print the correct variance and standard deviation for 'speeds2'."
-        raise check50.Mismatch("Correct output", "your output", help=help)
-        
-        
-        
-        
-        
 @check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
-    """Program prints the correct variance and standard deviation for random data speeds - Test 3"""
-    check50.include("Assignment_3_Sol.py")
-    check50.py.append_code("Assignment_3.py", "Assignment_3_Sol.py")
+    """Program prints correct weighted average - Test 3"""
+    actual = check50.run("python3 Assignment_3.py").stdin("22").stdin("13").stdin("7").stdin("58").stdin("87").stdin("72").stdin("92").stdin("76").stdout()
+    expected = "79.02"
     
-    actual = check50.run("python3 Assignment_3.py").stdout()
-    expected3 = "[34.85742857  5.904018  ]"
-    
-    if not re.search(expected3, actual):
-        help = r"Your code does not work for other data speeds.  Your code is being checked against several different data lists."
-        raise check50.Mismatch("Correct output", "your output", help=help)
+    if not re.search(expected, actual):
+        help = r"Your code does not print the correct result random weights and grades."
+        raise check50.Missing('Correct weighted average','your output',help=help)
         

@@ -17,10 +17,10 @@ def check_cases1(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "The shape of the DataFrame is: \(4903, 16\)"
+    expected = "1           23  2017-11-13T17:00:00.000Z  plush|\"bad unboxing\"|\"unboxing\"|\"fan mail\"|\"id...\""
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the shape of the original DataFrame."
+        help = r"Your code does not print the correct result for the first 10 rows of the 'df' DataFrame using the '.head' method."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -32,10 +32,10 @@ def check_cases2(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "Index\(\['video_id', 'trending_date', 'title', 'channel_title', 'category_id', 'publish_time',\n"
+    expected = r"Sheldon is roasting pastor of the church\\nyoun\.\.\.\s*\nFalse"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the updated list of columns after using the drop method."
+        help = r"Your code does not print the correct result for the outcome of the '.is_unique' method applied 'df['video_id']."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -46,10 +46,10 @@ def check_cases3(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "Total number of updated videos: 4725"
+    expected = "After removing the rows that contain duplicate video_id entries, the shape of the current DataFrame is: \(2794, 16\)"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the number of updated videos."
+        help = r"Your code does not print the correct result for the shape of the DataFrame after removing the rows that contain duplicate video_id entries."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -60,10 +60,10 @@ def check_cases4(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "Total number of dropped videos: 178"
+    expected = "After removing the rows that contain missing entries, the shape of the current DataFrame is: \(2657, 16\)"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the number of dropped videos."
+        help = r"Your code does not print the correct result for the shape of the DataFrame after removing the rows that contain missing entries."
         raise check50.Missing("Correct results",'your output',help=help)
         
 @check50.check(exists) # only run this check if the exists check has passed
@@ -74,8 +74,9 @@ def check_cases5(exists):
     assert os.path.exists("CanadaYouTubeVideos.csv")
     
     actual = check50.run("python3 Assignment_4.py").stdout()
-    expected = "The number of videos with no missing information that have more than one million views and likes is: 27"
+    expected = "The number of YouTube videos that contain the case-independent string 'amazon' in the 'tags' column is: 24"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the super_vidoes DataFrame."
+        help = r"Your code does not print the correct result for the number of YouTube videos that contain the case-independent string 'amazon' in the 'tags' column."
         raise check50.Missing("Correct results",'your output',help=help)
+        

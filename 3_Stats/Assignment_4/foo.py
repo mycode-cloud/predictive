@@ -1,6 +1,11 @@
 import check50 # import the check50 module
-import re
 import check50.py
+import re
+
+def sep_num(num):
+    # regex that matches `num` not surrounded by any other numbers
+    # (so coins(2) won't match e.g. 123)
+    return fr"(?<!\d){num}(?!\d)"
 
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
@@ -9,31 +14,105 @@ def exists(): # the name of the check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
-    """Program prints correct weighted average - Test 1"""
-    actual = check50.run("python3 Assignment_4.py").stdin("19").stdin("12").stdin("6").stdin("63").stdin("81").stdin("42").stdin("79").stdin("81").stdout()
-    expected = "76.2"
+    """Program prints the correct percentiles and mode(s) for 'clicks' - Test 1"""
     
-    if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for SAMPLE_DATA#1."
-        raise check50.Missing('Correct weighted average','your output',help=help)
+    actual = check50.run("python3 Assignment_4.py").stdout()
+    expected1 = "152.25"
+    expected2 = "208.0"
+    expected3 = "260.0"
+    expected4 = "283.0"
+    expected5 = "\[283\]"
     
+    if not re.search(expected1, actual):
+        help = r"Your code does not print the correct percentile P_25 for 'clicks'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected2, actual):
+        help = r"Your code does not print the correct percentile P_50 for 'clicks'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected3, actual):
+        help = r"Your code does not print the correct percentile P_75 for 'clicks'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected4, actual):
+        help = r"Your code does not print the correct percentile P_95 for 'clicks'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected5, actual):
+        help = r"Your code does not print the correct mode(s) for 'clicks'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+        
+        
+    
+        
 @check50.check(check_cases) # only run this check if the exists check has passed
 def check_cases2():
-    """Program prints correct weighted average - Test 2"""
-    actual = check50.run("python3 Assignment_4.py").stdin("28").stdin("6").stdin("18").stdin("48").stdin("47").stdin("83").stdin("55").stdin("89").stdout()
-    expected = "70.76"
+    """Program prints the correct percentiles and mode(s) for 'clicks2' - Test 2"""
     
-    if not re.search(expected, actual):
-        help = r"Your code does not print the correct result SAMPLE_DATA#2."
-        raise check50.Missing('Correct weighted average','your output',help=help)
+    actual = check50.run("python3 Assignment_4.py").stdout()
+    expected1 = "136.5"
+    expected2 = "154.0"
+    expected3 = "218.0"
+    expected4 = "272.2"
+    expected5 = "\[154, 200\]"
     
+    if not re.search(expected1, actual):
+        help = r"Your code does not print the correct percentile P_25 for 'clicks2'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected2, actual):
+        help = r"Your code does not print the correct percentile P_50 for 'clicks2'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected3, actual):
+        help = r"Your code does not print the correct percentile P_75 for 'clicks2'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected4, actual):
+        help = r"Your code does not print the correct percentile P_95 for 'clicks2'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected5, actual):
+        help = r"Your code does not print the correct mode(s) for 'clicks2'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+        
+        
+        
+        
 @check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
-    """Program prints correct weighted average - Test 3"""
-    actual = check50.run("python3 Assignment_4.py").stdin("22").stdin("13").stdin("7").stdin("58").stdin("87").stdin("72").stdin("92").stdin("76").stdout()
-    expected = "79.02"
+    """Program prints the correct percentiles and mode(s) for random data - Test 3"""
     
-    if not re.search(expected, actual):
-        help = r"Your code does not print the correct result random weights and grades."
-        raise check50.Missing('Correct weighted average','your output',help=help)
+    check50.include("Assignment_4_Sol.py")
+    check50.py.append_code("Assignment_4.py", "Assignment_4_Sol.py")
+    
+    actual = check50.run("python3 Assignment_4.py").stdout()
+    expected1 = "15.75"
+    expected2 = "19.0"
+    expected3 = "26.1"
+    expected4 = "29.349999999999998"
+    expected5 = "\[19.0\]"
+    
+    if not re.search(expected1, actual):
+        help = r"Your code does not print the correct percentile P_25 for random data."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected2, actual):
+        help = r"Your code does not print the correct percentile P_50 for random data."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected3, actual):
+        help = r"Your code does not print the correct percentile P_75 for random data."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected4, actual):
+        help = r"Your code does not print the correct percentile P_95 for random data."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+    if not re.search(expected5, actual):
+        help = r"Your code does not print the correct mode(s) for random data."
+        raise check50.Mismatch("Correct output", "your output", help=help)
         

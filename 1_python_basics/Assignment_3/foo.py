@@ -2,6 +2,11 @@ import check50 # import the check50 module
 import check50.py
 import re
 
+def sep_num(num):
+    # regex that matches `num` not surrounded by any other numbers
+    # (so coins(2) won't match e.g. 123)
+    return fr"(?<!\d){num}(?!\d)"
+
 @check50.check() # tag the function below as check50 check
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
@@ -9,49 +14,67 @@ def exists(): # the name of the check
 
 @check50.check(exists) # only run this check if the exists check has passed
 def check_cases():
-    """Program prints correct list - Test 1"""
+    """Program prints correct number of points for organizer - Test 1"""
     check50.include("Assignment_3_Sol.py")
     check50.py.append_code("Assignment_3.py", "Assignment_3_Sol.py")
     
     actual = check50.run("python3 Assignment_3.py").stdout()
+    expected1 = "25\n"
     
-    if "Johannes Jamal Galina" not in actual:
-        help = r"Your code does not work with the list ['Johannes', 'Jamal', 'Jamal', 'Johannes', 'Galina']."
-        raise check50.Missing("Correct output", "your output", help=help)                          
-                              
-                              
-                              
+    if not re.search(sep_num(25), actual):
+        help = r"Your code does not print the correct result for 'Johannes'."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+        
+        
+        
+        
+        
 @check50.check(check_cases) # only run this check if the exists check has passed
 def check_cases2():
-    """Program prints correct list - Test 2"""
+    """Program prints correct number of points for organizer - Test 2"""
     check50.include("Assignment_3_Sol.py")
     check50.py.append_code("Assignment_3.py", "Assignment_3_Sol.py")
     
     actual = check50.run("python3 Assignment_3.py").stdout()
+    expected2 = "5\n"
     
-    if "a b c" not in actual:
-        help = r"Your code does not work with the list ['a', 'a', 'a', 'b', 'b', 'c'].  Your code is being checked against several different lists."
-        raise check50.Missing("Correct output", "your output", help=help)
-                              
-                              
-                              
-                              
-                              
+    if not re.search(sep_num(5), actual):
+        help = r"Your code does not work for 'John'.  Your code is being checked against several different cases."
+        raise check50.Mismatch("Correct output", "your output", help=help)
+        
+        
+        
+        
+        
 @check50.check(check_cases2) # only run this check if the exists check has passed
 def check_cases3():
-    """Program prints correct list - Test 3"""
+    """Program prints correct number of points for organizer - Test 3"""
     check50.include("Assignment_3_Sol.py")
     check50.py.append_code("Assignment_3.py", "Assignment_3_Sol.py")
     
     actual = check50.run("python3 Assignment_3.py").stdout()
+    expected3 = "55\n"
     
-    if "d e f g" not in actual:
-        help = r"Your code does not work with a random list.  Your code is being checked against several different lists."
-        raise check50.Missing("Correct output", "your output", help=help)
-
+    if not re.search(sep_num(55), actual):
+        help = r"Your code does not work for other dictionaries.  Your code is being checked against several different dictionaries."
+        raise check50.Mismatch("Correct output", "your output", help=help)
         
         
         
         
         
+        
+@check50.check(check_cases3) # only run this check if the exists check has passed
+def check_cases4():
+    """Program prints correct number of points for organizer - Test 4"""
+    check50.include("Assignment_3_Sol.py")
+    check50.py.append_code("Assignment_3.py", "Assignment_3_Sol.py")
+    
+    actual = check50.run("python3 Assignment_3.py").stdout()
+    expected4 = "35\n"
+    
+    if not re.search(sep_num(35), actual):
+        help = r"Your code does not work for other dictionaries.  Your code is being checked against several different dictionaries."
+        raise check50.Mismatch("Correct output", "your output", help=help)
         

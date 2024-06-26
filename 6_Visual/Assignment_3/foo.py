@@ -5,5 +5,4 @@ import check50.py
 def exists(): # the name of the check
     """File exists""" # this is what you will see when running check50
     check50.exists("Assignment_3.py") # the actual check
-
     

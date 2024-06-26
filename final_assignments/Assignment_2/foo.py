@@ -14,7 +14,7 @@ def check_cases1():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The shape of the original DataFrame is:\s*\(9999, 11\)"
+    expected = "The shape of the original DataFrame is:\s*\(9999, 14\)"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the shape of the original DataFrame."
@@ -26,7 +26,7 @@ def check_cases2():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "After dropping all rows containing empty entries\, the shape of the updated DataFrame is:\s*\(6893, 11\)"
+    expected = "After dropping all rows containing empty entries\, the shape of the updated DataFrame is:\s*\(6814, 14\)"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the shape of the DataFrame after dropping all rows containing empty entries."
@@ -39,10 +39,10 @@ def check_cases3():
    
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The R-squared value for price vs\.\s*minimum_nights\s*is\s*0\.0007275938878409383"
+    expected = "host_identity_verified\s*category"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the print out of the R-squared value for price vs. minimum_nights."
+        help = r"Your code does not print the correct result for the first print out of the updated column data types."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -53,10 +53,10 @@ def check_cases4():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The R-squared value for price vs\.\s*service_fee\s*is\s*0\.501482384702971"
+    expected = "unconfirmed\s*3447\nverified\s*3367"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the print out of the R-squared value for price vs. service_fee."
+        help = r"Your code does not print the correct result for the print out of the result of .value_counts() for cat_abnb3."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -66,10 +66,10 @@ def check_cases5():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The R-squared value for price vs\.\s*availability_365\s*is\s*0\.49198510125291073"
+    expected = "The list of column names representing categorical data in the cleaned abnb3 DataFrame is\s*\[\'host_identity_verified\', \'instant_bookable'"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the print out of the R-squared value for price vs. availability_365."
+        help = r"Your code does not print the correct result for the print out of the list of column names representing categorical data in the cleaned abnb3 DataFrame."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -81,10 +81,10 @@ def check_cases6():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "coefficient of determination:\s*0\.5388016431708236"
+    expected = "The list of column names representing all data, with dummy variables included, in the cleaned abnb3 DataFrame is\s*\[\'id\', \'lat\', \'long\'"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the coefficient of determination for the multi-variable model."
+        help = r"Your code does not print the correct result for the print out of the list of the columns in 'abnb3_dummies' using the 'tolist()' method."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -94,10 +94,10 @@ def check_cases7():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "availability_365\s*-1.627559"
+    expected = "coefficient of determination:\s*0\.5396677955761835"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the availability_365 regression coefficient."
+        help = r"Your code does not print the correct result for the coefficient of determination."
         raise check50.Missing("Correct results",'your output',help=help)
         
         
@@ -107,7 +107,7 @@ def check_cases8():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "service_fee\s*1\.858834"
+    expected = "service_fee\s*1\.855570"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the service_fee regression coefficient."
@@ -120,9 +120,8 @@ def check_cases9():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The predicted price for the test data in abnb2_xtest is:\s*2078\.21"
+    expected = "The predicted price for the test data in abnb3_xtest is:\s*1943\.04"
     
     if not re.search(expected, actual):
-        help = r"Your code does not print the correct result for the predicted price for the test data in abnb2_xtest."
+        help = r"Your code does not print the correct result for the predicted price for the test data in abnb3_xtest."
         raise check50.Missing("Correct results",'your output',help=help)
-
