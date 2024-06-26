@@ -1,8 +1,8 @@
 submit50:
   files: &submit50_files
     - !exclude "*"
+    - !require Assignment_0.py
     - !require Assignment_1.py
-    - !require Assignment_2.py
     - !require Airbnb_2.csv
 check50:
   checks:  foo.py
