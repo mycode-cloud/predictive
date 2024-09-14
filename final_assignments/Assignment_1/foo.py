@@ -81,7 +81,7 @@ def check_cases6():
     
     actual = check50.run("python3 Assignment_1.py").stdout(timeout=20)
     
-    expected = "coefficient of determination:\s*0\.5388016431708236"
+    expected = "coefficient of determination:\s*0\.5388016431708234"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the coefficient of determination for the multi-variable model."
@@ -120,7 +120,7 @@ def check_cases9():
     
     actual = check50.run("python3 Assignment_1.py").stdout(timeout=20)
     
-    expected = "The predicted price for the test data in abnb2_xtest is:\s*2078\.21"
+    expected = "The predicted price for the test data in abnb1_xtest is:\s*2078\.21"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the predicted price for the test data in abnb2_xtest."
