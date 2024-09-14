@@ -66,7 +66,7 @@ def check_cases5():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The list of column names representing categorical data in the cleaned abnb3 DataFrame is\s*\[\'host_identity_verified\', \'instant_bookable'"
+    expected = "The list of column names representing categorical data in the cleaned abnb2 DataFrame is\s*\[\'host_identity_verified\', \'instant_bookable'"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the print out of the list of column names representing categorical data in the cleaned abnb3 DataFrame."
@@ -81,7 +81,7 @@ def check_cases6():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The list of column names representing all data, with dummy variables included, in the cleaned abnb3 DataFrame is\s*\[\'id\', \'lat\', \'long\'"
+    expected = "The list of column names representing all data, with dummy variables included, in the cleaned abnb2 DataFrame is\s*\[\'id\', \'lat\', \'long\'"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the print out of the list of the columns in 'abnb3_dummies' using the 'tolist()' method."
@@ -120,7 +120,7 @@ def check_cases9():
     
     actual = check50.run("python3 Assignment_2.py").stdout(timeout=20)
     
-    expected = "The predicted price for the test data in abnb3_xtest is:\s*1943\.04"
+    expected = "The predicted price for the test data in abnb2_xtest is:\s*1943\.04"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the predicted price for the test data in abnb3_xtest."
