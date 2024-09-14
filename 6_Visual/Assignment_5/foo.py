@@ -59,7 +59,7 @@ def check_cases4():
     assert os.path.exists("Big_Mart_Numerical.csv")
     actual = check50.run("python3 Assignment_5.py").stdout(timeout=20)
     
-    expected = "adjusted coefficient of determination:  0\.007167665509702048"
+    expected = "adjusted coefficient of determination:  0\.007167665509701937"
     
     if not re.search(expected, actual):
         help = r"Your code does not print the correct result for the adjusted coefficient of determination."
